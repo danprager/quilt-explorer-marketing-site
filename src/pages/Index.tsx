@@ -1,8 +1,22 @@
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
 import { Instagram, Facebook, Users, Sparkles, Scissors, Image as ImageIcon, BookOpen } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import quiltsRow from "@/assets/qe-quilts-row.jpg";
 import patternImg from "@/assets/qe-pattern.jpg";
+
+const patternSlides = [
+  { src: patternImg, caption: "Full color pattern overview" },
+  { src: patternImg, caption: "Fabric yardage in your Kona colors" },
+  { src: patternImg, caption: "Cutting instructions" },
+  { src: patternImg, caption: "Piecing & assembly diagrams" },
+];
 
 const Index = () => {
   return (
@@ -118,14 +132,30 @@ const Index = () => {
                   </li>
                 ))}
               </ul>
-              <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2">
-                <img
-                  src={patternImg}
-                  alt="Sample Quilt Explorer pattern with diagrams and instructions"
-                  className="w-full h-auto rounded-lg"
-                  loading="lazy"
-                />
-              </figure>
+
+              <div className="px-10 md:px-12">
+                <Carousel opts={{ loop: true }} className="w-full">
+                  <CarouselContent>
+                    {patternSlides.map((slide, i) => (
+                      <CarouselItem key={i}>
+                        <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2">
+                          <img
+                            src={slide.src}
+                            alt={slide.caption}
+                            className="w-full h-auto rounded-lg"
+                            loading="lazy"
+                          />
+                          <figcaption className="text-center text-sm text-charcoal/70 py-3 font-semibold">
+                            {slide.caption}
+                          </figcaption>
+                        </figure>
+                      </CarouselItem>
+                    ))}
+                  </CarouselContent>
+                  <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
+                  <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
+                </Carousel>
+              </div>
             </div>
           </div>
         </div>
