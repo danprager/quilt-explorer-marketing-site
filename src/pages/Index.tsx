@@ -119,50 +119,48 @@ const Index = () => {
               Quilt Explorer patterns explain <span className="font-bold">EVERYTHING</span> you need to make your quilt top.
             </p>
 
-            <div className="grid md:grid-cols-2 gap-10 mt-12 items-center">
-              <ul className="flex flex-wrap gap-2 content-start">
-                {[
-                  { icon: ImageIcon, text: "Full color images" },
-                  { icon: Scissors, text: "Kona fabric yardage" },
-                  { icon: Scissors, text: "Cutting instructions" },
-                  { icon: Sparkles, text: "Piecing & assembly" },
-                  { icon: BookOpen, text: "Helpful tutorials" },
-                ].map(({ icon: Icon, text }) => (
-                  <li
-                    key={text}
-                    className="inline-flex items-center gap-2 bg-card rounded-full pl-2 pr-4 py-1.5 shadow-soft border border-border"
-                  >
-                    <span className="shrink-0 w-6 h-6 rounded-full bg-kona-chartreuse flex items-center justify-center">
-                      <Icon className="h-3.5 w-3.5 text-charcoal" />
-                    </span>
-                    <span className="text-sm font-semibold text-charcoal whitespace-nowrap">{text}</span>
-                  </li>
-                ))}
-              </ul>
+            <ul className="mt-8 flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+              {[
+                { icon: ImageIcon, text: "Full color images" },
+                { icon: Scissors, text: "Kona fabric yardage" },
+                { icon: Scissors, text: "Cutting instructions" },
+                { icon: Sparkles, text: "Piecing & assembly" },
+                { icon: BookOpen, text: "Helpful tutorials" },
+              ].map(({ icon: Icon, text }) => (
+                <li
+                  key={text}
+                  className="inline-flex items-center gap-2 bg-card rounded-full pl-2 pr-4 py-1.5 shadow-soft border border-border"
+                >
+                  <span className="shrink-0 w-6 h-6 rounded-full bg-kona-chartreuse flex items-center justify-center">
+                    <Icon className="h-3.5 w-3.5 text-charcoal" />
+                  </span>
+                  <span className="text-sm font-semibold text-charcoal whitespace-nowrap">{text}</span>
+                </li>
+              ))}
+            </ul>
 
-              <div className="px-10 md:px-12">
-                <Carousel opts={{ loop: true }} className="w-full">
-                  <CarouselContent>
-                    {patternSlides.map((slide, i) => (
-                      <CarouselItem key={i}>
-                        <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2">
-                          <img
-                            src={slide.src}
-                            alt={slide.caption}
-                            className="w-full h-auto rounded-lg"
-                            loading="lazy"
-                          />
-                          <figcaption className="text-center text-sm text-charcoal/70 py-3 font-semibold">
-                            {slide.caption}
-                          </figcaption>
-                        </figure>
-                      </CarouselItem>
-                    ))}
-                  </CarouselContent>
-                  <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
-                  <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
-                </Carousel>
-              </div>
+            <div className="mt-12 px-10 md:px-12 max-w-3xl mx-auto">
+              <Carousel opts={{ loop: true }} className="w-full">
+                <CarouselContent>
+                  {patternSlides.map((slide, i) => (
+                    <CarouselItem key={i}>
+                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2">
+                        <img
+                          src={slide.src}
+                          alt={slide.caption}
+                          className="w-full h-auto rounded-lg"
+                          loading="lazy"
+                        />
+                        <figcaption className="text-center text-sm text-charcoal/70 py-3 font-semibold">
+                          {slide.caption}
+                        </figcaption>
+                      </figure>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
+                <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
+              </Carousel>
             </div>
           </div>
         </div>
