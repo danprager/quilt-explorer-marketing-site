@@ -8,9 +8,7 @@ export default {
     container: {
       center: true,
       padding: "2rem",
-      screens: {
-        "2xl": "1400px",
-      },
+      screens: { "2xl": "1400px" },
     },
     extend: {
       colors: {
@@ -47,6 +45,16 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        kona: {
+          orange: "hsl(var(--kona-orange))",
+          chartreuse: "hsl(var(--kona-chartreuse))",
+          capri: "hsl(var(--kona-capri))",
+          pomegranate: "hsl(var(--kona-pomegranate))",
+          white: "hsl(var(--kona-white))",
+        },
+        charcoal: "hsl(var(--charcoal))",
+        "section-pink": "hsl(var(--pink-soft))",
+        "section-grey": "hsl(var(--grey-soft))",
         sidebar: {
           DEFAULT: "hsl(var(--sidebar-background))",
           foreground: "hsl(var(--sidebar-foreground))",
@@ -58,32 +66,30 @@ export default {
           ring: "hsl(var(--sidebar-ring))",
         },
       },
+      backgroundImage: {
+        "gradient-hero": "var(--gradient-hero)",
+      },
+      boxShadow: {
+        pop: "var(--shadow-pop)",
+        soft: "var(--shadow-soft)",
+      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
       keyframes: {
-        "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
-        },
-        "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+        "accordion-down": { from: { height: "0" }, to: { height: "var(--radix-accordion-content-height)" } },
+        "accordion-up": { from: { height: "var(--radix-accordion-content-height)" }, to: { height: "0" } },
+        "wiggle": {
+          "0%,100%": { transform: "rotate(-1deg)" },
+          "50%": { transform: "rotate(1deg)" },
         },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "wiggle": "wiggle 1.2s ease-in-out infinite",
       },
     },
   },
