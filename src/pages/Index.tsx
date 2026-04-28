@@ -1,8 +1,22 @@
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
 import { Instagram, Facebook, Users, Sparkles, Scissors, Image as ImageIcon, BookOpen } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import quiltsRow from "@/assets/qe-quilts-row.jpg";
 import patternImg from "@/assets/qe-pattern.jpg";
+
+const patternSlides = [
+  { src: patternImg, caption: "Full color pattern overview" },
+  { src: patternImg, caption: "Fabric yardage in your Kona colors" },
+  { src: patternImg, caption: "Cutting instructions" },
+  { src: patternImg, caption: "Piecing & assembly diagrams" },
+];
 
 const Index = () => {
   return (
