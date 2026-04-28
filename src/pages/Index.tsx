@@ -120,22 +120,22 @@ const Index = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-10 mt-12 items-center">
-              <ul className="space-y-2">
+              <ul className="flex flex-wrap gap-2 content-start">
                 {[
                   { icon: ImageIcon, text: "Full color images" },
-                  { icon: Scissors, text: "Fabric yardage in your chosen Kona colors" },
+                  { icon: Scissors, text: "Kona fabric yardage" },
                   { icon: Scissors, text: "Cutting instructions" },
-                  { icon: Sparkles, text: "Piecing and assembly instructions" },
-                  { icon: BookOpen, text: "Access to helpful tutorials" },
+                  { icon: Sparkles, text: "Piecing & assembly" },
+                  { icon: BookOpen, text: "Helpful tutorials" },
                 ].map(({ icon: Icon, text }) => (
                   <li
                     key={text}
-                    className="flex items-center gap-3 bg-card rounded-lg px-3 py-2 shadow-soft border border-border"
+                    className="inline-flex items-center gap-2 bg-card rounded-full pl-2 pr-4 py-1.5 shadow-soft border border-border"
                   >
-                    <span className="shrink-0 w-7 h-7 rounded-full bg-kona-chartreuse flex items-center justify-center">
-                      <Icon className="h-4 w-4 text-charcoal" />
+                    <span className="shrink-0 w-6 h-6 rounded-full bg-kona-chartreuse flex items-center justify-center">
+                      <Icon className="h-3.5 w-3.5 text-charcoal" />
                     </span>
-                    <span className="text-base font-semibold text-charcoal">{text}</span>
+                    <span className="text-sm font-semibold text-charcoal whitespace-nowrap">{text}</span>
                   </li>
                 ))}
               </ul>
