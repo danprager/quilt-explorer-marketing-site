@@ -15,8 +15,8 @@
     --charcoal: 220 10% 22%;
 
     /* Section backgrounds */
-    --pink-soft: 340 60% 96%;
-    --grey-soft: 30 10% 95%;
+    --pink-soft: 340 70% 90%;
+    --grey-soft: 110 40% 88%;
 
     --background: var(--kona-white);
     --foreground: var(--charcoal);
