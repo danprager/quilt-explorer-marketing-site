@@ -120,7 +120,7 @@ const Index = () => {
             </p>
 
             <div className="grid md:grid-cols-2 gap-10 mt-12 items-center">
-              <ul className="space-y-4">
+              <ul className="space-y-2">
                 {[
                   { icon: ImageIcon, text: "Full color images" },
                   { icon: Scissors, text: "Fabric yardage in your chosen Kona colors" },
@@ -130,12 +130,12 @@ const Index = () => {
                 ].map(({ icon: Icon, text }) => (
                   <li
                     key={text}
-                    className="flex items-start gap-4 bg-card rounded-xl p-4 shadow-soft border border-border"
+                    className="flex items-center gap-3 bg-card rounded-lg px-3 py-2 shadow-soft border border-border"
                   >
-                    <span className="shrink-0 w-10 h-10 rounded-full bg-kona-chartreuse flex items-center justify-center">
-                      <Icon className="h-5 w-5 text-charcoal" />
+                    <span className="shrink-0 w-7 h-7 rounded-full bg-kona-chartreuse flex items-center justify-center">
+                      <Icon className="h-4 w-4 text-charcoal" />
                     </span>
-                    <span className="text-lg font-semibold text-charcoal pt-1.5">{text}</span>
+                    <span className="text-base font-semibold text-charcoal">{text}</span>
                   </li>
                 ))}
               </ul>
