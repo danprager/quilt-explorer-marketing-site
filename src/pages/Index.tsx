@@ -9,13 +9,20 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import quiltsRow from "@/assets/qe-quilts-row.jpg";
-import patternImg from "@/assets/qe-pattern.jpg";
+import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.png";
+import patternStats from "@/assets/qe-pattern-2-stats.png";
+import patternYardage from "@/assets/qe-pattern-3-yardage.png";
+import patternUnits from "@/assets/qe-pattern-4-units.png";
+import patternBlocks from "@/assets/qe-pattern-5-blocks.png";
+import patternAssembly from "@/assets/qe-pattern-6-assembly.png";
 
 const patternSlides = [
-  { src: patternImg, caption: "Full color pattern overview" },
-  { src: patternImg, caption: "Fabric yardage in your Kona colors" },
-  { src: patternImg, caption: "Cutting instructions" },
-  { src: patternImg, caption: "Piecing & assembly diagrams" },
+  { src: patternQuiltTop, caption: "The completed quilt top" },
+  { src: patternStats, caption: "Quilt stats & glossary" },
+  { src: patternYardage, caption: "Fabric yardage in your Kona colors" },
+  { src: patternUnits, caption: "Unit construction" },
+  { src: patternBlocks, caption: "Block construction" },
+  { src: patternAssembly, caption: "Assembling the quilt top" },
 ];
 
 const Index = () => {
