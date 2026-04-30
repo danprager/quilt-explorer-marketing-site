@@ -49,6 +49,8 @@ export default {
           orange: "hsl(var(--kona-orange))",
           chartreuse: "hsl(var(--kona-chartreuse))",
           capri: "hsl(var(--kona-capri))",
+          "capri-soft": "hsl(var(--kona-capri-soft))",
+          "capri-deep": "hsl(var(--kona-capri-deep))",
           pomegranate: "hsl(var(--kona-pomegranate))",
           white: "hsl(var(--kona-white))",
         },
