@@ -1,5 +1,6 @@
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
+import logo from "@/assets/qe-logo.jpg";
 import { Instagram, Facebook, Users, Sparkles, Scissors, Image as ImageIcon, BookOpen } from "lucide-react";
 import {
   Carousel,
@@ -34,11 +35,15 @@ const Index = () => {
       <section className="bg-section-pink">
         <div className="container py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-kona-pomegranate leading-tight">
-              Quilt Explorer
-            </h1>
-            <p className="mt-3 text-2xl md:text-3xl font-semibold text-charcoal">
-              Easy! Fun! <span className="text-kona-orange">Gorgeous designs!</span>
+            <img
+              src={logo}
+              alt="Quilt Explorer logo"
+              className="mx-auto w-full max-w-2xl h-auto"
+            />
+            <p className="mt-6 text-2xl md:text-3xl font-extrabold">
+              <span className="text-kona-orange-deep">Easy!</span>{" "}
+              <span className="text-kona-chartreuse-deep">Fun!</span>{" "}
+              <span className="text-kona-pomegranate-deep">Gorgeous designs!</span>
             </p>
             <p className="mt-6 text-lg md:text-xl text-charcoal/80">
               It's so much fun to just keep clicking and seeing a new design with every single click!
