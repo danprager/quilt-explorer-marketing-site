@@ -42,7 +42,7 @@ const Index = () => {
             />
             <p className="mt-6 text-3xl md:text-5xl font-extrabold">
               <span className="text-kona-orange-deep">Easy!</span>{" "}
-              <span className="text-kona-chartreuse-deep">Fun!</span>{" "}
+              <span className="text-kona-capri-deep">Fun!</span>{" "}
               <span className="text-kona-pomegranate-deep">Gorgeous designs!</span>
             </p>
             <p className="mt-6 text-lg md:text-xl text-charcoal/80">
