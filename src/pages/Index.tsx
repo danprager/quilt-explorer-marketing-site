@@ -94,14 +94,24 @@ const Index = () => {
                 </p>
                 <p className="text-2xl font-bold text-kona-orange">So easy! Such fun!</p>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-pop bg-charcoal aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/qY0rw3gkEUo"
-                  title="Quilt Explorer demo video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+              <div>
+                <div className="rounded-2xl overflow-hidden shadow-pop bg-charcoal aspect-video">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/qY0rw3gkEUo"
+                    title="Quilt Explorer demo video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="mt-6 text-center">
+                  <a href="https://app.quiltexplorer.com">
+                    <QEButton size="md">
+                      <Sparkles className="mr-2 h-4 w-4" />
+                      Click here
+                    </QEButton>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -144,13 +154,15 @@ const Index = () => {
                 <CarouselContent>
                   {patternSlides.map((slide, i) => (
                     <CarouselItem key={i}>
-                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2">
-                        <img
-                          src={slide.src}
-                          alt={slide.caption}
-                          className="w-full h-auto rounded-lg"
-                          loading="lazy"
-                        />
+                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2 h-[28rem] md:h-[32rem] flex flex-col">
+                        <div className="flex-1 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={slide.src}
+                            alt={slide.caption}
+                            className="max-h-full max-w-full object-contain rounded-lg"
+                            loading="lazy"
+                          />
+                        </div>
                         <figcaption className="text-center text-sm text-charcoal/70 py-3 font-semibold">
                           {slide.caption}
                         </figcaption>
