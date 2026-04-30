@@ -189,36 +189,33 @@ const Index = () => {
               Find up-to-date information and gorgeous new designs in your social media feeds.
             </p>
 
-            <div className="grid sm:grid-cols-3 gap-5 mt-10">
+            <div className="flex flex-wrap justify-center gap-3 mt-10">
               <a
                 href="https://instagram.com/quiltexplorerdotcom"
                 target="_blank"
                 rel="noreferrer"
-                className="group bg-card rounded-2xl p-6 shadow-soft border border-border hover:shadow-pop transition-all hover:-translate-y-1"
+                className="group inline-flex items-center gap-2 bg-kona-capri-soft rounded-full px-4 py-2 border-2 border-kona-capri-deep hover:shadow-pop transition-all hover:-translate-y-0.5"
               >
-                <Instagram className="h-8 w-8 mx-auto text-kona-pomegranate" />
-                <p className="mt-3 font-bold text-charcoal">Instagram</p>
-                <p className="text-sm text-charcoal/70">@quiltexplorerdotcom</p>
+                <Instagram className="h-4 w-4 text-kona-capri-deep" />
+                <span className="text-sm font-bold text-kona-capri-deep">Instagram</span>
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=615733481710466&sk=about"
                 target="_blank"
                 rel="noreferrer"
-                className="group bg-card rounded-2xl p-6 shadow-soft border border-border hover:shadow-pop transition-all hover:-translate-y-1"
+                className="group inline-flex items-center gap-2 bg-kona-capri-soft rounded-full px-4 py-2 border-2 border-kona-capri-deep hover:shadow-pop transition-all hover:-translate-y-0.5"
               >
-                <Facebook className="h-8 w-8 mx-auto text-kona-capri" />
-                <p className="mt-3 font-bold text-charcoal">Facebook Page</p>
-                <p className="text-sm text-charcoal/70">Follow our updates</p>
+                <Facebook className="h-4 w-4 text-kona-capri-deep" />
+                <span className="text-sm font-bold text-kona-capri-deep">Facebook Page</span>
               </a>
               <a
                 href="https://www.facebook.com/groups/2438672756618317"
                 target="_blank"
                 rel="noreferrer"
-                className="group bg-card rounded-2xl p-6 shadow-soft border border-border hover:shadow-pop transition-all hover:-translate-y-1"
+                className="group inline-flex items-center gap-2 bg-kona-capri-soft rounded-full px-4 py-2 border-2 border-kona-capri-deep hover:shadow-pop transition-all hover:-translate-y-0.5"
               >
-                <Users className="h-8 w-8 mx-auto text-kona-orange" />
-                <p className="mt-3 font-bold text-charcoal">Community Group</p>
-                <p className="text-sm text-charcoal/70">Share & connect</p>
+                <Users className="h-4 w-4 text-kona-capri-deep" />
+                <span className="text-sm font-bold text-kona-capri-deep">Community Group</span>
               </a>
             </div>
 
