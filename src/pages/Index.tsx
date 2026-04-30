@@ -80,6 +80,7 @@ const Index = () => {
         <div className="container py-16 md:py-24">
           <div className="max-w-5xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-extrabold text-center text-kona-pomegranate">
+              Why Quilt Explorer?
             </h2>
             <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">
               <div className="space-y-5 text-lg text-charcoal/85">
@@ -111,7 +112,7 @@ const Index = () => {
       <section className="bg-section-pink">
         <div className="container py-16 md:py-24">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-5xl text-center text-kona-pomegranate">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-center text-kona-pomegranate">
               Brilliant, value-packed patterns
             </h2>
             <p className="mt-4 text-center text-lg text-charcoal/80 max-w-2xl mx-auto">
@@ -169,7 +170,7 @@ const Index = () => {
       <section id="contact" className="bg-section-grey">
         <div className="container py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl text-kona-pomegranate">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-kona-pomegranate">
               Be part of the Quilt Explorer community
             </h2>
             <p className="mt-4 text-lg text-charcoal/80">
