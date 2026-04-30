@@ -79,7 +79,7 @@ const Index = () => {
       <section className="bg-section-grey">
         <div className="container py-16 md:py-24">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-5xl text-center text-kona-pomegranate">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-center text-kona-pomegranate">
               Why Quilt Explorer?
             </h2>
             <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">
@@ -94,14 +94,24 @@ const Index = () => {
                 </p>
                 <p className="text-2xl font-bold text-kona-orange">So easy! Such fun!</p>
               </div>
-              <div className="rounded-2xl overflow-hidden shadow-pop bg-charcoal aspect-video">
-                <iframe
-                  className="w-full h-full"
-                  src="https://www.youtube.com/embed/qY0rw3gkEUo"
-                  title="Quilt Explorer demo video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                />
+              <div>
+                <div className="rounded-2xl overflow-hidden shadow-pop bg-charcoal aspect-video">
+                  <iframe
+                    className="w-full h-full"
+                    src="https://www.youtube.com/embed/qY0rw3gkEUo"
+                    title="Quilt Explorer demo video"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="mt-6 text-center">
+                  <a href="https://app.quiltexplorer.com">
+                    <QEButton size="md">
+                      <Sparkles className="mr-2 h-4 w-4" />
+                      Click here
+                    </QEButton>
+                  </a>
+                </div>
               </div>
             </div>
           </div>
@@ -112,7 +122,7 @@ const Index = () => {
       <section className="bg-section-pink">
         <div className="container py-16 md:py-24">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl md:text-5xl text-center text-kona-pomegranate">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-center text-kona-pomegranate">
               Brilliant, value-packed patterns
             </h2>
             <p className="mt-4 text-center text-lg text-charcoal/80 max-w-2xl mx-auto">
@@ -144,13 +154,15 @@ const Index = () => {
                 <CarouselContent>
                   {patternSlides.map((slide, i) => (
                     <CarouselItem key={i}>
-                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2">
-                        <img
-                          src={slide.src}
-                          alt={slide.caption}
-                          className="w-full h-auto rounded-lg"
-                          loading="lazy"
-                        />
+                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2 h-[28rem] md:h-[32rem] flex flex-col">
+                        <div className="flex-1 flex items-center justify-center overflow-hidden">
+                          <img
+                            src={slide.src}
+                            alt={slide.caption}
+                            className="max-h-full max-w-full object-contain rounded-lg"
+                            loading="lazy"
+                          />
+                        </div>
                         <figcaption className="text-center text-sm text-charcoal/70 py-3 font-semibold">
                           {slide.caption}
                         </figcaption>
@@ -170,43 +182,40 @@ const Index = () => {
       <section id="contact" className="bg-section-grey">
         <div className="container py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-5xl text-kona-pomegranate">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-kona-pomegranate">
               Be part of the Quilt Explorer community
             </h2>
             <p className="mt-4 text-lg text-charcoal/80">
               Find up-to-date information and gorgeous new designs in your social media feeds.
             </p>
 
-            <div className="grid sm:grid-cols-3 gap-5 mt-10">
+            <div className="flex flex-wrap justify-center gap-3 mt-10">
               <a
                 href="https://instagram.com/quiltexplorerdotcom"
                 target="_blank"
                 rel="noreferrer"
-                className="group bg-card rounded-2xl p-6 shadow-soft border border-border hover:shadow-pop transition-all hover:-translate-y-1"
+                className="group inline-flex items-center gap-2 bg-kona-capri-soft rounded-full px-4 py-2 border-2 border-kona-capri-deep hover:shadow-pop transition-all hover:-translate-y-0.5"
               >
-                <Instagram className="h-8 w-8 mx-auto text-kona-pomegranate" />
-                <p className="mt-3 font-bold text-charcoal">Instagram</p>
-                <p className="text-sm text-charcoal/70">@quiltexplorerdotcom</p>
+                <Instagram className="h-4 w-4 text-kona-capri-deep" />
+                <span className="text-sm font-bold text-kona-capri-deep">Instagram</span>
               </a>
               <a
                 href="https://www.facebook.com/profile.php?id=615733481710466&sk=about"
                 target="_blank"
                 rel="noreferrer"
-                className="group bg-card rounded-2xl p-6 shadow-soft border border-border hover:shadow-pop transition-all hover:-translate-y-1"
+                className="group inline-flex items-center gap-2 bg-kona-capri-soft rounded-full px-4 py-2 border-2 border-kona-capri-deep hover:shadow-pop transition-all hover:-translate-y-0.5"
               >
-                <Facebook className="h-8 w-8 mx-auto text-kona-capri" />
-                <p className="mt-3 font-bold text-charcoal">Facebook Page</p>
-                <p className="text-sm text-charcoal/70">Follow our updates</p>
+                <Facebook className="h-4 w-4 text-kona-capri-deep" />
+                <span className="text-sm font-bold text-kona-capri-deep">Facebook Page</span>
               </a>
               <a
                 href="https://www.facebook.com/groups/2438672756618317"
                 target="_blank"
                 rel="noreferrer"
-                className="group bg-card rounded-2xl p-6 shadow-soft border border-border hover:shadow-pop transition-all hover:-translate-y-1"
+                className="group inline-flex items-center gap-2 bg-kona-capri-soft rounded-full px-4 py-2 border-2 border-kona-capri-deep hover:shadow-pop transition-all hover:-translate-y-0.5"
               >
-                <Users className="h-8 w-8 mx-auto text-kona-orange" />
-                <p className="mt-3 font-bold text-charcoal">Community Group</p>
-                <p className="text-sm text-charcoal/70">Share & connect</p>
+                <Users className="h-4 w-4 text-kona-capri-deep" />
+                <span className="text-sm font-bold text-kona-capri-deep">Community Group</span>
               </a>
             </div>
 
