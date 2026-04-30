@@ -40,7 +40,7 @@ const Index = () => {
               alt="Quilt Explorer logo"
               className="mx-auto w-full max-w-2xl h-auto"
             />
-            <p className="mt-6 text-2xl md:text-3xl font-extrabold">
+            <p className="mt-6 text-3xl md:text-5xl font-extrabold">
               <span className="text-kona-orange-deep">Easy!</span>{" "}
               <span className="text-kona-chartreuse-deep">Fun!</span>{" "}
               <span className="text-kona-pomegranate-deep">Gorgeous designs!</span>
