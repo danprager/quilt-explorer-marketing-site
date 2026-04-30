@@ -243,7 +243,7 @@ const Index = () => {
 
       <footer className="bg-charcoal text-kona-white">
         <div className="container py-8 text-center text-sm">
-          © {new Date().getFullYear()} Quilt Explorer. Easy. Fun. Gorgeous.
+          © {new Date().getFullYear()} Quilt Explorer. Easy. Fun. Gorgeous designs.
         </div>
       </footer>
     </div>
