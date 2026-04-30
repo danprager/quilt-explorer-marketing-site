@@ -79,8 +79,7 @@ const Index = () => {
       <section className="bg-section-grey">
         <div className="container py-16 md:py-24">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-3xl md:text-5xl text-center text-kona-pomegranate">
-              Why Quilt Explorer?
+            <h2 className="text-4xl md:text-6xl font-extrabold text-center text-kona-pomegranate">
             </h2>
             <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">
               <div className="space-y-5 text-lg text-charcoal/85">
