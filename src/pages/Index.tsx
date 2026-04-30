@@ -8,7 +8,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import quiltsRow from "@/assets/qe-quilts-row.jpg";
+import quiltsRow from "@/assets/qe-quilts-row.png";
 import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.png";
 import patternStats from "@/assets/qe-pattern-2-stats.png";
 import patternYardage from "@/assets/qe-pattern-3-yardage.png";
