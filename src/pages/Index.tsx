@@ -40,10 +40,8 @@ const Index = () => {
               alt="Quilt Explorer logo"
               className="mx-auto w-full max-w-2xl h-auto"
             />
-            <p className="mt-6 text-3xl md:text-5xl font-extrabold">
-              <span className="text-kona-orange-deep">Easy!</span>{" "}
-              <span className="text-kona-capri-deep">Fun!</span>{" "}
-              <span className="text-kona-pomegranate-deep">Gorgeous designs!</span>
+            <p className="mt-6 text-3xl md:text-5xl font-extrabold text-kona-pomegranate-deep">
+              Your magic kaleidoscope for quilt design
             </p>
             <p className="mt-6 text-lg md:text-xl text-charcoal/80">
               It's so much fun to just keep clicking and seeing a new design with every single click!
@@ -243,7 +241,7 @@ const Index = () => {
 
       <footer className="bg-charcoal text-kona-white">
         <div className="container py-8 text-center text-sm">
-          © {new Date().getFullYear()} Quilt Explorer. Easy. Fun. Gorgeous designs.
+          © {new Date().getFullYear()} Quilt Explorer. Your magic kaleidoscope for quilt design.
         </div>
       </footer>
     </div>
