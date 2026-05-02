@@ -9,7 +9,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import Kaleidoscope from "@/components/qe/Kaleidoscope";
+import quiltsRow from "@/assets/qe-quilts-row.png";
 import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.png";
 import patternStats from "@/assets/qe-pattern-2-stats.png";
 import patternYardage from "@/assets/qe-pattern-3-yardage.png";
@@ -50,8 +50,13 @@ const Index = () => {
               Within minutes, you can create a fabulous quilt design and purchase a pattern with complete instructions!
             </p>
 
-            <figure className="mt-10">
-              <Kaleidoscope />
+            <figure className="mt-10 rounded-2xl overflow-hidden shadow-pop">
+              <img
+                src={quiltsRow}
+                alt="Five colorful quilt patterns displayed in a row"
+                className="w-full h-auto"
+                loading="eager"
+              />
             </figure>
 
             <blockquote className="mt-8 text-xl italic text-kona-pomegranate">
