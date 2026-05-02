@@ -50,13 +50,8 @@ const Index = () => {
               Within minutes, you can create a fabulous quilt design and purchase a pattern with complete instructions!
             </p>
 
-            <figure className="mt-10 rounded-2xl overflow-hidden shadow-pop">
-              <img
-                src={quiltsRow}
-                alt="Five colorful quilt patterns displayed in a row"
-                className="w-full h-auto"
-                loading="eager"
-              />
+            <figure className="mt-10">
+              <Kaleidoscope />
             </figure>
 
             <blockquote className="mt-8 text-xl italic text-kona-pomegranate">
