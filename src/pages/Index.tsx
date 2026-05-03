@@ -49,7 +49,7 @@ const Index = () => {
               Each button click is like a turn of the kaleidoscope, offering a beautiful new design each time.
             </p>
             <p className="mt-3 text-lg md:text-xl text-charcoal/80">
-              Within minutes, you can create a fabulous quilt design and purchase a pattern with complete instructions!
+              Quilt Explorer makes it easy to create a unique fabulous design in minutes, and access an easy-to-follow pattern with complete yardages, cutting and sewing instructions.
             </p>
 
             <figure className="mt-10 rounded-2xl overflow-hidden shadow-pop">
