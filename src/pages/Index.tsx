@@ -242,8 +242,13 @@ const Index = () => {
       </section>
 
       <footer className="bg-charcoal text-kona-white">
-        <div className="container py-8 text-center text-sm">
-          © {new Date().getFullYear()} Quilt Explorer. Your magic kaleidoscope for quilt design.
+        <div className="container py-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
+          <div className="text-center sm:text-left">
+            © {new Date().getFullYear()} Quilt Explorer. Your magic kaleidoscope for quilt design.
+          </div>
+          <a href="/terms" className="hover:underline">
+            Terms and conditions
+          </a>
         </div>
       </footer>
     </div>
