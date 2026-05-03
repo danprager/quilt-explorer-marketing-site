@@ -41,10 +41,12 @@ const Index = () => {
               className="mx-auto w-full max-w-2xl h-auto"
             />
             <p className="mt-6 text-3xl md:text-5xl font-extrabold text-kona-pomegranate-deep">
-              Your magic kaleidoscope for quilt design
+              Your magic kaleidoscope
+              <br />
+              for quilt design
             </p>
             <p className="mt-6 text-lg md:text-xl text-charcoal/80">
-              It's so much fun to just keep clicking and seeing a new design with every single click!
+              Each button click is like a turn of the kaleidoscope, offering a beautiful new design each time.
             </p>
             <p className="mt-3 text-lg md:text-xl text-charcoal/80">
               Within minutes, you can create a fabulous quilt design and purchase a pattern with complete instructions!
