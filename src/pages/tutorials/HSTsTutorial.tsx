@@ -42,34 +42,11 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-8 flex justify-center">
-              <div className="grid grid-cols-4 gap-0">
-                {[
-                  { src: "image5.png", rotate: "rotate-90" },
-                  { src: "image1.png", rotate: "-rotate-90" },
-                  { src: "image1.png", rotate: "rotate-0" },
-                  { src: "image5.png", rotate: "rotate-180" },
-                  { src: "image1.png", rotate: "-rotate-90" },
-                  { src: "image2.png", rotate: "-rotate-90" },
-                  { src: "image2.png", rotate: "rotate-0" },
-                  { src: "image1.png", rotate: "rotate-0" },
-                  { src: "image3.png", rotate: "rotate-180" },
-                  { src: "image5.png", rotate: "rotate-0" },
-                  { src: "image5.png", rotate: "-rotate-90" },
-                  { src: "image3.png", rotate: "rotate-90" },
-                  { src: "image2.png", rotate: "rotate-180" },
-                  { src: "image3.png", rotate: "rotate-180" },
-                  { src: "image3.png", rotate: "rotate-90" },
-                  { src: "image2.png", rotate: "rotate-90" },
-                ].map((cell, i) => (
-                  <div key={i} className="w-16 h-16 flex items-center justify-center overflow-hidden">
-                    <img
-                      src={`${IMG}${cell.src}`}
-                      alt=""
-                      className={`w-16 h-16 object-contain ${cell.rotate}`}
-                    />
-                  </div>
-                ))}
-              </div>
+              <img
+                src={`${IMG}hst-design.png`}
+                alt="A 4x4 arrangement of HST blocks showing various design possibilities"
+                className="w-64 h-64 object-contain"
+              />
             </div>
 
             <h2 className="mt-12 text-2xl md:text-3xl font-bold text-kona-pomegranate">
@@ -106,7 +83,7 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image4.png`} alt="Squares sewn with two lines" className="w-24 h-24 object-contain" />
+              <img src={`${IMG}split-hst.png`} alt="Squares sewn with two lines either side of diagonal" className="w-24 h-24 object-contain" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
