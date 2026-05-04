@@ -83,7 +83,7 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}split-hst.png`} alt="Squares sewn with two lines either side of diagonal" className="w-24 h-24 object-contain" />
+              <img src={`${IMG}image4.png`} alt="Squares sewn with two lines either side of diagonal" className="w-24 h-24 object-contain" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -91,7 +91,7 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image11.png`} alt="Unit being cut along the drawn line" className="w-24 h-24 object-contain" />
+              <img src={`${IMG}split-hst.png`} alt="Unit being cut along the drawn line" className="w-24 h-24 object-contain" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
