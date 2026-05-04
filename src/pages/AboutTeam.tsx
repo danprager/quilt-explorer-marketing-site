@@ -37,7 +37,7 @@ const AboutTeam = () => {
                 {
                   name: "Dan Prager",
                   img: whoDan,
-                  bio: "Dan is smart… smart enough to marry Andi, and to realise that quilt design would be much better with easy-to-use software. Dan devised and programmed the algorithms that make the Quilt Explorer magic happen. He has a background in mathematics, startups, and software development & coaching.",
+                  bio: "Dan is smart… smart enough to marry Andi, and to realise that quilt design would be much better with easy-to-use software. Dan devised and programmed the algorithms that make the Quilt Explorer magic happen. He has a background in mathematics, startups software & product development, and coaching.",
                 },
                 {
                   name: "John Barham",
