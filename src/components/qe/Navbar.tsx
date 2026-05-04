@@ -12,7 +12,12 @@ const links: NavLink[] = [
   { label: "Home", href: "https://www.quiltexplorer.com" },
   { label: "Design", href: "https://app.quiltexplorer.com" },
   { label: "FAQ", href: "#faq" },
-  { label: "Tutorials", href: "#tutorials" },
+  {
+    label: "Tutorials",
+    children: [
+      { label: "Half-Square Triangles (HSTs)", href: "/tutorials/hsts" },
+    ],
+  },
   {
     label: "About",
     children: [
@@ -25,7 +30,10 @@ const links: NavLink[] = [
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
-  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const [mobileOpenLabel, setMobileOpenLabel] = useState<string | null>(null);
+
+  const toggleMobileDropdown = (label: string) =>
+    setMobileOpenLabel((prev) => (prev === label ? null : label));
 
   return (
     <header className="sticky top-0 z-50 bg-kona-chartreuse shadow-soft">
@@ -85,14 +93,14 @@ const Navbar = () => {
                 <button
                   type="button"
                   className="w-full flex items-center justify-between px-3 py-2 rounded-md text-charcoal font-semibold hover:bg-charcoal hover:text-kona-white"
-                  onClick={() => setMobileAboutOpen((v) => !v)}
+                  onClick={() => toggleMobileDropdown(l.label)}
                 >
                   {l.label}
                   <ChevronDown
-                    className={`h-4 w-4 transition-transform ${mobileAboutOpen ? "rotate-180" : ""}`}
+                    className={`h-4 w-4 transition-transform ${mobileOpenLabel === l.label ? "rotate-180" : ""}`}
                   />
                 </button>
-                {mobileAboutOpen && (
+                {mobileOpenLabel === l.label && (
                   <ul className="pl-4 space-y-1">
                     {l.children.map((c) => (
                       <li key={c.label}>

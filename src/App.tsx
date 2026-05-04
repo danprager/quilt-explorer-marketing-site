@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import Terms from "./pages/Terms.tsx";
 import AboutStory from "./pages/AboutStory.tsx";
 import AboutTeam from "./pages/AboutTeam.tsx";
+import HSTsTutorial from "./pages/tutorials/HSTsTutorial.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/terms" element={<Terms />} />
           <Route path="/about/story" element={<AboutStory />} />
           <Route path="/about/team" element={<AboutTeam />} />
+          <Route path="/tutorials/hsts" element={<HSTsTutorial />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
