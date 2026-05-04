@@ -16,6 +16,7 @@ const links: NavLink[] = [
     label: "Tutorials",
     children: [
       { label: "Half-Square Triangles (HSTs)", href: "/tutorials/hsts" },
+      { label: "Quarter-Square Triangles (QSTs)", href: "/tutorials/qsts" },
     ],
   },
   {
