@@ -7,7 +7,7 @@ const links = [
   { label: "Design", href: "https://app.quiltexplorer.com" },
   { label: "FAQ", href: "#faq" },
   { label: "Tutorials", href: "#tutorials" },
-  { label: "About", href: "#about" },
+  { label: "About", href: "/about" },
   { label: "Contact", href: "#contact" },
 ];
 
