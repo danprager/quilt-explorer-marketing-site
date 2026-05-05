@@ -1,9 +1,9 @@
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
 import { Sparkles } from "lucide-react";
-import story1 from "@/assets/about-story-1.png";
-import story2 from "@/assets/about-story-2.png";
-import story3 from "@/assets/about-story-3.png";
+import story1 from "@/assets/about-story-1.webp";
+import story2 from "@/assets/about-story-2.webp";
+import story3 from "@/assets/about-story-3.webp";
 
 const AboutStory = () => {
   return (
@@ -17,7 +17,7 @@ const AboutStory = () => {
             </h1>
 
             <figure className="mt-10 flex justify-center">
-              <img src={story1} alt="Quilt Explorer" className="w-64 h-64 object-contain rounded-2xl shadow-pop bg-white" />
+              <img src={story1} alt="Quilt Explorer" className="w-64 h-64 object-contain rounded-2xl shadow-pop bg-white" width="528" height="528" />
             </figure>
 
             <p className="mt-8 text-lg text-charcoal/85">
@@ -32,7 +32,7 @@ const AboutStory = () => {
             </p>
 
             <figure className="mt-10 flex justify-center">
-              <img src={story2} alt="Quilt Explorer designs" className="w-64 h-64 object-contain rounded-2xl shadow-pop bg-white" />
+              <img src={story2} alt="Quilt Explorer designs" className="w-64 h-64 object-contain rounded-2xl shadow-pop bg-white" width="530" height="530" />
             </figure>
 
             <h2 className="mt-12 text-2xl md:text-3xl font-bold text-charcoal">
@@ -55,7 +55,7 @@ const AboutStory = () => {
               What makes Quilt Explorer awesome?
             </h2>
             <figure className="mt-6 flex justify-center">
-              <img src={story3} alt="A Quilt Explorer design" className="w-64 h-64 object-contain rounded-2xl shadow-pop bg-white" />
+              <img src={story3} alt="A Quilt Explorer design" className="w-64 h-64 object-contain rounded-2xl shadow-pop bg-white" width="535" height="535" />
             </figure>
             <p className="mt-6 text-lg text-charcoal/85">
               Every block is generated randomly, without a block library — which means every design you create has the potential to be genuinely unique, never seen before.
