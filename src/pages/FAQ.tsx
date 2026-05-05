@@ -32,7 +32,7 @@ const FAQ = () => {
 
             <Accordion type="multiple" className="mt-10 space-y-2">
 
-              {/* Who is Quilt Explorer for? */}
+              {/* 1. Who is Quilt Explorer for? */}
               <AccordionItem value="who-for" className="bg-white rounded-xl border-none px-6 shadow-soft">
                 <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
                   Who is Quilt Explorer for?
@@ -47,10 +47,10 @@ const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              {/* Pricing */}
+              {/* 2. Pricing */}
               <AccordionItem value="pricing" className="bg-white rounded-xl border-none px-6 shadow-soft">
                 <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
-                  Pricing
+                  How much does Quilt Explorer cost?
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-4">
                   <div>
@@ -73,33 +73,38 @@ const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              {/* Licensing */}
-              <AccordionItem value="licensing" className="bg-white rounded-xl border-none px-6 shadow-soft">
+              {/* 3. Technology */}
+              <AccordionItem value="technology" className="bg-white rounded-xl border-none px-6 shadow-soft">
                 <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
-                  Licensing
+                  Can I use QE on my phone, tablet, and laptop?
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-4">
                   <div>
-                    <h3 className="text-lg font-bold text-charcoal mb-1">Can I on-sell my Quilt Explorer patterns? Can I copy them or otherwise give them away?</h3>
-                    <p>No and no. All patterns generated using quiltexplorer.com remain the intellectual property of Quilt Explorer. Patterns are licensed for strictly personal use.</p>
+                    <h3 className="text-lg font-bold text-charcoal mb-1">Can I use Quilt Explorer on any device?</h3>
+                    <p>Yes! Quilt Explorer is fully functional on any device that is connected to the internet.</p>
+                    <div className="mt-3 space-y-2">
+                      <p><strong>Landscape mode</strong> — mainly desktop and laptop computers</p>
+                      <ul className="list-disc pl-6"><li>All features can be seen in a single screen</li></ul>
+                      <p><strong>Portrait mode</strong> — mainly tablets and smart phones</p>
+                      <ul className="list-disc pl-6"><li>Users will need to toggle between 'block' view and 'quilt' view to see all the features</li></ul>
+                    </div>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-charcoal mb-1">Can I sell the quilts I make?</h3>
-                    <p>You may sell a quilt or two made using a Quilt Explorer pattern. However, you may not have them made up and sold in commercial quantities.</p>
-                    <p className="mt-1">If you are interested in obtaining a <strong>commercial license</strong> for a Quilt Explorer pattern, please <a href="#contact" className="text-kona-pomegranate underline">contact us</a>.</p>
+                    <h3 className="text-lg font-bold text-charcoal mb-1">Is Quilt Explorer available as an app?</h3>
+                    <p>Yes! You can add Quilt Explorer to the home screen of your phone, tablet, or computer for quick, easy access — just like a regular app, without any downloading required.</p>
+                    <p className="mt-1">To do it, open Quilt Explorer in your browser, tap or click the menu icon (☰) in the top left corner, and select <strong>"Install App."</strong> That's it! A Quilt Explorer icon will appear on your home screen, so you can jump straight in whenever you like.</p>
                   </div>
                   <div>
-                    <h3 className="text-lg font-bold text-charcoal mb-1">Can I enter my Quilt Explorer quilts into quilt shows?</h3>
-                    <p>You absolutely can!! But we do ask that you acknowledge Quilt Explorer as a design tool in your artist statement.</p>
-                    <p className="mt-1">Please send us photos of your prizes and ribbons!!</p>
+                    <h3 className="text-lg font-bold text-charcoal mb-1">Technology problems?</h3>
+                    <p>We are always looking to improve our website so please <a href="/contact" className="text-kona-pomegranate underline">contact us</a> if you encounter any difficulties using Quilt Explorer on your device. We aim to fix these sorts of problems as a matter of high priority!</p>
                   </div>
                 </AccordionContent>
               </AccordionItem>
 
-              {/* Quilt Explorer accounts */}
+              {/* 4. Accounts */}
               <AccordionItem value="accounts" className="bg-white rounded-xl border-none px-6 shadow-soft">
                 <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
-                  Quilt Explorer accounts
+                  Do I need an account?
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-4">
                   <div>
@@ -121,38 +126,10 @@ const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              {/* Technology */}
-              <AccordionItem value="technology" className="bg-white rounded-xl border-none px-6 shadow-soft">
-                <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
-                  Technology
-                </AccordionTrigger>
-                <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-4">
-                  <div>
-                    <h3 className="text-lg font-bold text-charcoal mb-1">Can I use Quilt Explorer on any device?</h3>
-                    <p>Yes! Quilt Explorer is fully functional on any device that is connected to the internet.</p>
-                    <div className="mt-3 space-y-2">
-                      <p><strong>Landscape mode</strong> — mainly desktop and laptop computers</p>
-                      <ul className="list-disc pl-6"><li>All features can be seen in a single screen</li></ul>
-                      <p><strong>Portrait mode</strong> — mainly tablets and smart phones</p>
-                      <ul className="list-disc pl-6"><li>Users will need to toggle between 'block' view and 'quilt' view to see all the features</li></ul>
-                    </div>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-charcoal mb-1">Is Quilt Explorer available as an app?</h3>
-                    <p>Yes! You can add Quilt Explorer to the home screen of your phone, tablet, or computer for quick, easy access — just like a regular app, without any downloading required.</p>
-                    <p className="mt-1">To do it, open Quilt Explorer in your browser, tap or click the menu icon (☰) in the top left corner, and select <strong>"Install App."</strong> That's it! A Quilt Explorer icon will appear on your home screen, so you can jump straight in whenever you like.</p>
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold text-charcoal mb-1">Technology problems?</h3>
-                    <p>We are always looking to improve our website so please <a href="#contact" className="text-kona-pomegranate underline">contact us</a> if you encounter any difficulties using Quilt Explorer on your device. We aim to fix these sorts of problems as a matter of high priority!</p>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* Quilt Explorer patterns */}
+              {/* 5. Patterns */}
               <AccordionItem value="patterns" className="bg-white rounded-xl border-none px-6 shadow-soft">
                 <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
-                  Quilt Explorer patterns
+                  What's included in a Quilt Explorer pattern?
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-2">
                   <p>Quilt Explorer patterns are provided in standard PDF format.</p>
@@ -161,26 +138,10 @@ const FAQ = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              {/* Does Quilt Explorer store my information? */}
-              <AccordionItem value="data" className="bg-white rounded-xl border-none px-6 shadow-soft">
-                <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
-                  Does Quilt Explorer store my information?
-                </AccordionTrigger>
-                <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-2">
-                  <p>Once you have created an account, Quilt Explorer does keep some details (such as your name, email address, Premium status, and which designs are your favourite).</p>
-                  <p>This enables us to give you a better experience on the website:</p>
-                  <ul className="list-disc pl-6 space-y-1 mt-1">
-                    <li>You will be able to checkout faster and more easily as your details will be automatically entered.</li>
-                    <li>Your favourite designs will be stored for you to access and edit whenever you like.</li>
-                  </ul>
-                  <p className="mt-2">For further information about this topic, please refer to our <a href="/terms" className="text-kona-pomegranate underline">Terms &amp; conditions</a>.</p>
-                </AccordionContent>
-              </AccordionItem>
-
-              {/* Fabric */}
+              {/* 6. Fabric */}
               <AccordionItem value="fabric" className="bg-white rounded-xl border-none px-6 shadow-soft">
                 <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
-                  Fabric
+                  What fabric does Quilt Explorer use?
                 </AccordionTrigger>
                 <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-4">
                   <div>
@@ -198,6 +159,45 @@ const FAQ = () => {
                     <h3 className="text-lg font-bold text-charcoal mb-1">Do I have to use Kona fabrics?</h3>
                     <p>No you don't. You can switch them out for any fabrics you like. Solids, patterns, anything goes!!</p>
                   </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* 7. Licensing */}
+              <AccordionItem value="licensing" className="bg-white rounded-xl border-none px-6 shadow-soft">
+                <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
+                  What are the licensing conditions on QE patterns?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-4">
+                  <div>
+                    <h3 className="text-lg font-bold text-charcoal mb-1">Can I on-sell my Quilt Explorer patterns? Can I copy them or otherwise give them away?</h3>
+                    <p>No and no. All patterns generated using quiltexplorer.com remain the intellectual property of Quilt Explorer. Patterns are licensed for strictly personal use.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-charcoal mb-1">Can I sell the quilts I make?</h3>
+                    <p>You may sell a quilt or two made using a Quilt Explorer pattern. However, you may not have them made up and sold in commercial quantities.</p>
+                    <p className="mt-1">If you are interested in obtaining a <strong>commercial license</strong> for a Quilt Explorer pattern, please <a href="/contact" className="text-kona-pomegranate underline">contact us</a>.</p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-charcoal mb-1">Can I enter my Quilt Explorer quilts into quilt shows?</h3>
+                    <p>You absolutely can!! But we do ask that you acknowledge Quilt Explorer as a design tool in your artist statement.</p>
+                    <p className="mt-1">Please send us photos of your prizes and ribbons!!</p>
+                  </div>
+                </AccordionContent>
+              </AccordionItem>
+
+              {/* 8. Data */}
+              <AccordionItem value="data" className="bg-white rounded-xl border-none px-6 shadow-soft">
+                <AccordionTrigger className="text-xl font-bold text-kona-pomegranate hover:no-underline hover:text-kona-pomegranate/80 py-5">
+                  Does Quilt Explorer store my information?
+                </AccordionTrigger>
+                <AccordionContent className="text-base text-charcoal/85 pb-5 space-y-2">
+                  <p>Once you have created an account, Quilt Explorer does keep some details (such as your name, email address, Premium status, and which designs are your favourite).</p>
+                  <p>This enables us to give you a better experience on the website:</p>
+                  <ul className="list-disc pl-6 space-y-1 mt-1">
+                    <li>You will be able to checkout faster and more easily as your details will be automatically entered.</li>
+                    <li>Your favourite designs will be stored for you to access and edit whenever you like.</li>
+                  </ul>
+                  <p className="mt-2">For further information about this topic, please refer to our <a href="/terms" className="text-kona-pomegranate underline">Terms &amp; conditions</a>.</p>
                 </AccordionContent>
               </AccordionItem>
 
