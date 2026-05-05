@@ -4,14 +4,14 @@ const Terms = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
       <Navbar />
-      <main className="flex-1">
+      <section className="bg-section-pink flex-1">
         <iframe
           src="/legal/qe-legal.html"
           title="Quilt Explorer Terms and Conditions"
           className="w-full"
           style={{ height: "calc(100vh - 4rem)", border: "none" }}
         />
-      </main>
+      </section>
       <footer className="bg-charcoal text-kona-white">
         <div className="container py-8 flex flex-col sm:flex-row items-center justify-between gap-2 text-sm">
           <div className="text-center sm:text-left">
