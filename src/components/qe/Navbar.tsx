@@ -26,7 +26,7 @@ const links: NavLink[] = [
       { label: "Who are we?", href: "/about/team" },
     ],
   },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "/contact" },
 ];
 
 const Navbar = () => {

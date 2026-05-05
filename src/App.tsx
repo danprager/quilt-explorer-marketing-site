@@ -8,6 +8,7 @@ import Index from "./pages/Index.tsx";
 import Terms from "./pages/Terms.tsx";
 import AboutStory from "./pages/AboutStory.tsx";
 import AboutTeam from "./pages/AboutTeam.tsx";
+import Contact from "./pages/Contact.tsx";
 import HSTsTutorial from "./pages/tutorials/HSTsTutorial.tsx";
 import QSTsTutorial from "./pages/tutorials/QSTsTutorial.tsx";
 import FAQ from "./pages/FAQ.tsx";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/tutorials/hsts" element={<HSTsTutorial />} />
           <Route path="/tutorials/qsts" element={<QSTsTutorial />} />
           <Route path="/faq" element={<FAQ />} />
+          <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
