@@ -63,7 +63,7 @@ const Contact = () => {
               <p className="text-lg font-bold text-charcoal">Socials</p>
               <div className="flex flex-wrap gap-3 mt-3">
                 <a
-                  href="https://www.facebook.com/profile.php?id=615733481710466&sk=about"
+                  href="https://www.facebook.com/profile.php?id=61573348171046"
                   target="_blank"
                   rel="noreferrer"
                   aria-label="Facebook page"
