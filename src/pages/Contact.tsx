@@ -2,7 +2,7 @@ import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import { Facebook, Instagram, Mail, Users } from "lucide-react";
 import Navbar from "@/components/qe/Navbar";
-import { QEButton } from "@/components/qe/QEButton";
+import QEButton from "@/components/qe/QEButton";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
