@@ -9,7 +9,7 @@ type NavLink = {
 };
 
 const links: NavLink[] = [
-  { label: "Home", href: "https://www.quiltexplorer.com" },
+  { label: "Home", href: "/" },
   { label: "Design", href: "https://app.quiltexplorer.com" },
   { label: "FAQ", href: "/faq" },
   {
