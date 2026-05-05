@@ -38,7 +38,7 @@ const Contact = () => {
               />
             </figure>
 
-            <h1 className="mt-10 text-4xl md:text-6xl font-extrabold text-kona-pomegranate">
+            <h1 className="mt-10 text-3xl sm:text-4xl md:text-6xl font-extrabold text-kona-pomegranate whitespace-nowrap">
               Hello from QE in Australia!!
             </h1>
             <p className="mt-6 text-lg text-charcoal/85">We'd love to hear from you.</p>
