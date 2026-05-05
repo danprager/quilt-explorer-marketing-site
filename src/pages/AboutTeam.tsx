@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 import whoBannerTop from "@/assets/about-who-banner-top.webp";
 import whoAndi from "@/assets/about-who-andi.webp";
@@ -8,6 +9,10 @@ import whoBannerBottom from "@/assets/about-who-banner-bottom.webp";
 const AboutTeam = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>Who Are We? — Quilt Explorer</title>
+        <meta name="description" content="Quilt Explorer is built by Andi Herman (PatchAndi), Dan Prager, and John Barham — combining quilting expertise, mathematics, and software development." />
+      </Helmet>
       <Navbar />
       <section className="bg-section-grey flex-1">
         <div className="container py-16 md:py-24">

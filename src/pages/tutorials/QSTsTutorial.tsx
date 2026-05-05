@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 
 const IMG = "/tutorials/qst-images/";
@@ -7,6 +8,10 @@ const SZ = "w-24 h-24 object-contain";
 const QSTsTutorial = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>Quarter-Square Triangles Tutorial — Quilt Explorer</title>
+        <meta name="description" content="Step-by-step guide to making Quarter-Square Triangle (QST) units using the 2-at-a-time method, with a cutting chart and examples of different QST styles." />
+      </Helmet>
       <Navbar />
       <section className="bg-section-pink flex-1">
         <div className="container py-16 md:py-24">
@@ -61,8 +66,8 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6 flex items-start gap-6">
-              <img src={`${IMG}image18.png`} alt="Fabric square 1" className={SZ} />
-              <img src={`${IMG}image9.png`}  alt="Fabric square 2" className={SZ} />
+              <img src={`${IMG}image18.png`} alt="Fabric square 1" className={SZ} loading="lazy" />
+              <img src={`${IMG}image9.png`}  alt="Fabric square 2" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -71,7 +76,7 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image12.png`} alt="Square with diagonal line drawn" className={SZ} />
+              <img src={`${IMG}image12.png`} alt="Square with diagonal line drawn" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -82,7 +87,7 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image20.png`} alt="Squares sewn with two lines" className={SZ} />
+              <img src={`${IMG}image20.png`} alt="Squares sewn with two lines" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -90,7 +95,7 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}split-hst.png`} alt="Cutting along the drawn line" className={SZ} />
+              <img src={`${IMG}split-hst.png`} alt="Cutting along the drawn line" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -101,8 +106,8 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6 flex items-start gap-6">
-              <img src={`${IMG}image2.png`} alt="First HST unit" className={`${SZ} rotate-90`} />
-              <img src={`${IMG}image2.png`} alt="Second HST unit" className={`${SZ} rotate-90`} />
+              <img src={`${IMG}image2.png`} alt="First HST unit" className={`${SZ} rotate-90`} loading="lazy" />
+              <img src={`${IMG}image2.png`} alt="Second HST unit" className={`${SZ} rotate-90`} loading="lazy" />
             </div>
 
             <p className="mt-8 text-lg font-semibold text-charcoal underline decoration-charcoal">
@@ -116,7 +121,7 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image21.png`} alt="HST with second diagonal line drawn" className={SZ} />
+              <img src={`${IMG}image21.png`} alt="HST with second diagonal line drawn" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -126,7 +131,7 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image10-t.png`} alt="Two HSTs placed right-sides together" className={SZ} />
+              <img src={`${IMG}image10-t.png`} alt="Two HSTs placed right-sides together" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -134,7 +139,7 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image22.png`} alt="Sewing two lines on the second diagonal" className={SZ} />
+              <img src={`${IMG}image22.png`} alt="Sewing two lines on the second diagonal" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -142,7 +147,7 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image15-t.png`} alt="Cutting along the second drawn line" className={SZ} />
+              <img src={`${IMG}image15-t.png`} alt="Cutting along the second drawn line" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -151,8 +156,8 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-6 flex items-start gap-6">
-              <img src={`${IMG}image4.png`} alt="First QST unit" className={SZ} />
-              <img src={`${IMG}image4.png`} alt="Second QST unit" className={SZ} />
+              <img src={`${IMG}image4.png`} alt="First QST unit" className={SZ} loading="lazy" />
+              <img src={`${IMG}image4.png`} alt="Second QST unit" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -177,7 +182,7 @@ const QSTsTutorial = () => {
             </p>
 
             <div className="mt-4">
-              <img src={`${IMG}image13.png`} alt="Typical 2-color QST" className={SZ} />
+              <img src={`${IMG}image13.png`} alt="Typical 2-color QST" className={SZ} loading="lazy" />
             </div>
 
             <p className="mt-4 text-lg text-charcoal/85">
@@ -203,12 +208,12 @@ const QSTsTutorial = () => {
             ].map((ex, i) => (
               <div key={i} className="mt-6">
                 <div className="flex flex-wrap items-center gap-3">
-                  <img src={`${IMG}${ex.a}`} alt="First HST pair" className={SZ} />
+                  <img src={`${IMG}${ex.a}`} alt="First HST pair" className={SZ} loading="lazy" />
                   <span className="text-charcoal/70 font-medium">combined with</span>
-                  <img src={`${IMG}${ex.b}`} alt="Second HST pair" className={SZ} />
+                  <img src={`${IMG}${ex.b}`} alt="Second HST pair" className={SZ} loading="lazy" />
                   <span className="text-charcoal/70 font-medium">makes</span>
                   {ex.results.map((r, j) => (
-                    <img key={j} src={`${IMG}${r}`} alt="Resulting QST" className={SZ} />
+                    <img key={j} src={`${IMG}${r}`} alt="Resulting QST" className={SZ} loading="lazy" />
                   ))}
                 </div>
                 {ex.note && (

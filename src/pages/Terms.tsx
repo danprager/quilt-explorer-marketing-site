@@ -1,8 +1,13 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 
 const Terms = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>Terms & Conditions — Quilt Explorer</title>
+        <meta name="description" content="Quilt Explorer terms of service, privacy policy, and refund policy." />
+      </Helmet>
       <Navbar />
       <section className="bg-section-pink flex-1">
         <iframe

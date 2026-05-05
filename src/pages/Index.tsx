@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
 import logo from "@/assets/qe-logo.jpg";
@@ -29,6 +30,10 @@ const patternSlides = [
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
+      <Helmet>
+        <title>Quilt Explorer — Easy! Fun! Gorgeous Quilt Designs</title>
+        <meta name="description" content="Design beautiful, unique quilt blocks in minutes. Explore endless possibilities and get a complete PDF pattern with cutting and assembly instructions." />
+      </Helmet>
       <Navbar />
 
       {/* Section 1 - Hero (soft pink) */}

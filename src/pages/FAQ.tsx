@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 import {
   Accordion,
@@ -9,6 +10,10 @@ import {
 const FAQ = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>FAQ — Quilt Explorer</title>
+        <meta name="description" content="Answers to common questions about Quilt Explorer — pricing, licensing, accounts, fabric, patterns, and more." />
+      </Helmet>
       <Navbar />
       <section className="bg-section-pink flex-1">
         <div className="container py-16 md:py-24">

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 
 const IMG = "/tutorials/images/";
@@ -5,6 +6,10 @@ const IMG = "/tutorials/images/";
 const HSTsTutorial = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>Half-Square Triangles Tutorial — Quilt Explorer</title>
+        <meta name="description" content="Step-by-step guide to making Half-Square Triangle (HST) units using the 2-at-a-time method, with a cutting chart for common sizes." />
+      </Helmet>
       <Navbar />
       <section className="bg-section-pink flex-1">
         <div className="container py-16 md:py-24">
@@ -62,8 +67,8 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-6 flex items-start gap-6">
-              <img src={`${IMG}image7.png`} alt="Fabric square 1" className="w-24 h-24 object-contain" />
-              <img src={`${IMG}image8.png`} alt="Fabric square 2" className="w-24 h-24 object-contain" />
+              <img src={`${IMG}image7.png`} alt="Fabric square 1" className="w-24 h-24 object-contain" loading="lazy" />
+              <img src={`${IMG}image8.png`} alt="Fabric square 2" className="w-24 h-24 object-contain" loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -72,7 +77,7 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image6.png`} alt="Square with diagonal line drawn" className="w-24 h-24 object-contain" />
+              <img src={`${IMG}image6.png`} alt="Square with diagonal line drawn" className="w-24 h-24 object-contain" loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -83,7 +88,7 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image4.png`} alt="Squares sewn with two lines either side of diagonal" className="w-24 h-24 object-contain" />
+              <img src={`${IMG}image4.png`} alt="Squares sewn with two lines either side of diagonal" className="w-24 h-24 object-contain" loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -91,7 +96,7 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}split-hst.png`} alt="Unit being cut along the drawn line" className="w-24 h-24 object-contain" />
+              <img src={`${IMG}split-hst.png`} alt="Unit being cut along the drawn line" className="w-24 h-24 object-contain" loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -102,8 +107,8 @@ const HSTsTutorial = () => {
             </p>
 
             <div className="mt-6 flex items-start gap-6">
-              <img src={`${IMG}image2.png`} alt="First HST unit" className="w-24 h-24 object-contain rotate-90" />
-              <img src={`${IMG}image2.png`} alt="Second HST unit" className="w-24 h-24 object-contain rotate-90" />
+              <img src={`${IMG}image2.png`} alt="First HST unit" className="w-24 h-24 object-contain rotate-90" loading="lazy" />
+              <img src={`${IMG}image2.png`} alt="Second HST unit" className="w-24 h-24 object-contain rotate-90" loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">

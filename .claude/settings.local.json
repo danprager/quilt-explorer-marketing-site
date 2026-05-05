@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Read(//Users/dan/Downloads/QST - Tutorial/**)",
+      "Read(//Users/dan/Downloads/QST - Tutorial/images/**)",
+      "Read(//Users/dan/Downloads/re/**)",
+      "Bash(cp \"/Users/dan/Downloads/re/block.png\" /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/block.png)",
+      "Bash(cp \"/Users/dan/Downloads/re/image-a.png\" /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/image-a.png)",
+      "Bash(cp \"/Users/dan/Downloads/re/image-b.png\" /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/image-b.png)",
+      "Bash(cp \"/Users/dan/Downloads/re/image-c.png\" /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/image-c.png)",
+      "Bash(cp \"/Users/dan/Downloads/re/image-d.png\" /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/image-d.png)",
+      "Bash(convert /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/image10.png -fuzz 10% -transparent white /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/image10-t.png)",
+      "Bash(convert /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/image15.png -fuzz 10% -transparent white /Users/dan/racket/quilt-explorer-marketing-site/public/tutorials/qst-images/image15-t.png)",
+      "Bash(cp \"/Users/dan/Downloads/dan.png\"  /Users/dan/racket/quilt-explorer-marketing-site/src/assets/about-who-dan.png)",
+      "Bash(cp \"/Users/dan/Downloads/john.png\" /Users/dan/racket/quilt-explorer-marketing-site/src/assets/about-who-john.png)"
+    ]
+  }
+}

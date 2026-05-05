@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
 import { Sparkles } from "lucide-react";
@@ -8,6 +9,10 @@ import story3 from "@/assets/about-story-3.webp";
 const AboutStory = () => {
   return (
     <div className="min-h-screen bg-background flex flex-col">
+      <Helmet>
+        <title>Our Story — Quilt Explorer</title>
+        <meta name="description" content="Meet the team behind Quilt Explorer — a mathematician and a quilter who built a better way to design beautiful quilt blocks." />
+      </Helmet>
       <Navbar />
       <section className="bg-section-pink flex-1">
         <div className="container py-16 md:py-24">
