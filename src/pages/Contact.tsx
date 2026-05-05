@@ -6,7 +6,7 @@ import QEButton from "@/components/qe/QEButton";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import contactHeader from "@/assets/contact-header.png";
+import contactHeader from "@/assets/contact-header.webp";
 
 const Contact = () => {
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });

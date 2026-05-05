@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
-import logo from "@/assets/qe-logo.jpg";
+import logo from "@/assets/qe-logo.webp";
 import { Instagram, Facebook, Users, Sparkles, Scissors, Image as ImageIcon, BookOpen } from "lucide-react";
 import {
   Carousel,
@@ -10,13 +10,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import quiltsRow from "@/assets/qe-quilts-row.png";
-import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.png";
-import patternStats from "@/assets/qe-pattern-2-stats.png";
-import patternYardage from "@/assets/qe-pattern-3-yardage.png";
-import patternUnits from "@/assets/qe-pattern-4-units.png";
-import patternBlocks from "@/assets/qe-pattern-5-blocks.png";
-import patternAssembly from "@/assets/qe-pattern-6-assembly.png";
+import quiltsRow from "@/assets/qe-quilts-row.webp";
+import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.webp";
+import patternStats from "@/assets/qe-pattern-2-stats.webp";
+import patternYardage from "@/assets/qe-pattern-3-yardage.webp";
+import patternUnits from "@/assets/qe-pattern-4-units.webp";
+import patternBlocks from "@/assets/qe-pattern-5-blocks.webp";
+import patternAssembly from "@/assets/qe-pattern-6-assembly.webp";
 
 const patternSlides = [
   { src: patternQuiltTop, caption: "The completed quilt top" },

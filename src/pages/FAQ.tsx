@@ -24,7 +24,7 @@ const FAQ = () => {
 
             <div className="mt-8 flex justify-center">
               <img
-                src="/faq/images/image1.png"
+                src="/faq/images/image1.webp"
                 alt="Quilt Explorer FAQ banner"
                 className="w-full max-w-xl object-contain rounded-xl"
               />

@@ -1,6 +1,6 @@
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/qe-logo.jpg";
+import logo from "@/assets/qe-logo.webp";
 
 type NavLink = {
   label: string;
