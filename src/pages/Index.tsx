@@ -90,6 +90,7 @@ const Index = () => {
               <Carousel
                 opts={{ loop: true }}
                 plugins={[heroAutoplay.current]}
+                setApi={setHeroApi}
                 className="w-full max-w-2xl mx-auto"
               >
                 <CarouselContent>
