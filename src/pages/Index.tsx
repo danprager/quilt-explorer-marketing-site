@@ -10,13 +10,19 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import quiltsRow from "@/assets/qe-quilts-row.webp";
+import Autoplay from "embla-carousel-autoplay";
+import { useRef } from "react";
 import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.webp";
 import patternStats from "@/assets/qe-pattern-2-stats.webp";
 import patternYardage from "@/assets/qe-pattern-3-yardage.webp";
 import patternUnits from "@/assets/qe-pattern-4-units.webp";
 import patternBlocks from "@/assets/qe-pattern-5-blocks.webp";
 import patternAssembly from "@/assets/qe-pattern-6-assembly.webp";
+
+const heroSlides = Array.from({ length: 30 }, (_, i) => {
+  const n = String(i + 1).padStart(2, "0");
+  return new URL(`../assets/hero-carousel/${n}.png`, import.meta.url).href;
+});
 
 const patternSlides = [
   { src: patternQuiltTop, caption: "The completed quilt top" },
@@ -28,6 +34,7 @@ const patternSlides = [
 ];
 
 const Index = () => {
+  const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true }));
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -50,28 +57,31 @@ const Index = () => {
               <br />
               for quilt design
             </p>
-            <p className="mt-6 text-lg md:text-xl text-charcoal/80">
-              Each button click is like a turn of the kaleidoscope, offering a beautiful new design each time.
-            </p>
-            <p className="mt-3 text-lg md:text-xl text-charcoal/80">
-              Quilt Explorer makes it easy to create a unique fabulous design in minutes, and access an easy-to-follow pattern with complete yardages, cutting and sewing instructions.
-            </p>
 
-            <figure className="mt-10 rounded-2xl overflow-hidden shadow-pop">
-              <img
-                src={quiltsRow}
-                alt="Five colorful quilt patterns displayed in a row"
-                className="w-full h-auto"
-                loading="eager"
-              />
-            </figure>
-
-            <blockquote className="mt-8 text-xl italic text-kona-pomegranate">
-              "Wow! Even I can do this"
-              <footer className="not-italic text-base text-charcoal/70 mt-1">
-                — Maryjane Morris, Brisbane, Australia
-              </footer>
-            </blockquote>
+            <div className="mt-10 px-10 md:px-12">
+              <Carousel
+                opts={{ loop: true }}
+                plugins={[heroAutoplay.current]}
+                className="w-full max-w-2xl mx-auto"
+              >
+                <CarouselContent>
+                  {heroSlides.map((src, i) => (
+                    <CarouselItem key={i}>
+                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2">
+                        <img
+                          src={src}
+                          alt={`Quilt design ${i + 1}`}
+                          className="w-full h-auto rounded-lg"
+                          loading={i === 0 ? "eager" : "lazy"}
+                        />
+                      </figure>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
+                <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
+              </Carousel>
+            </div>
 
             <div className="mt-10">
               <a href="https://app.quiltexplorer.com">
@@ -81,6 +91,21 @@ const Index = () => {
                 </QEButton>
               </a>
             </div>
+
+            <p className="mt-10 text-lg md:text-xl text-charcoal/80">
+              Each button click is like a turn of the kaleidoscope, offering a beautiful new design each time.
+            </p>
+            <p className="mt-3 text-lg md:text-xl text-charcoal/80">
+              Quilt Explorer makes it easy to create a unique fabulous design in minutes, and access an easy-to-follow pattern with complete yardages, cutting and sewing instructions.
+            </p>
+
+            <blockquote className="mt-8 text-xl italic text-kona-pomegranate">
+              "Wow! Even I can do this"
+              <footer className="not-italic text-base text-charcoal/70 mt-1">
+                — Maryjane Morris, Brisbane, Australia
+              </footer>
+            </blockquote>
+
           </div>
         </div>
       </section>
