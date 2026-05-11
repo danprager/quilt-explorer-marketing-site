@@ -11,7 +11,8 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import { Pause, Play } from "lucide-react";
 import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.webp";
 import patternStats from "@/assets/qe-pattern-2-stats.webp";
 import patternYardage from "@/assets/qe-pattern-3-yardage.webp";
@@ -35,6 +36,17 @@ const patternSlides = [
 
 const Index = () => {
   const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const [isPlaying, setIsPlaying] = useState(true);
+  const toggleAutoplay = () => {
+    const plugin = heroAutoplay.current;
+    if (isPlaying) {
+      plugin.stop();
+      setIsPlaying(false);
+    } else {
+      plugin.play();
+      setIsPlaying(true);
+    }
+  };
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -81,6 +93,18 @@ const Index = () => {
                 <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
                 <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
               </Carousel>
+              <div className="mt-4 flex justify-center">
+                <button
+                  type="button"
+                  onClick={toggleAutoplay}
+                  aria-label={isPlaying ? "Pause carousel" : "Play carousel"}
+                  aria-pressed={!isPlaying}
+                  className="inline-flex items-center gap-2 rounded-full bg-kona-pomegranate text-kona-white px-4 py-2 text-sm font-bold shadow-soft hover:bg-kona-pomegranate/90 transition-all"
+                >
+                  {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                  {isPlaying ? "Pause" : "Play"}
+                </button>
+              </div>
             </div>
 
             <div className="mt-10">
