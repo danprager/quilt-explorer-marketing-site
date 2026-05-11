@@ -37,17 +37,32 @@ const patternSlides = [
 
 const Index = () => {
   const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const [heroApi, setHeroApi] = useState<CarouselApi>();
   const [isPlaying, setIsPlaying] = useState(true);
+  const isPlayingRef = useRef(true);
   const toggleAutoplay = () => {
     const plugin = heroAutoplay.current;
-    if (isPlaying) {
-      plugin.stop();
-      setIsPlaying(false);
-    } else {
-      plugin.play();
-      setIsPlaying(true);
-    }
+    const next = !isPlayingRef.current;
+    isPlayingRef.current = next;
+    setIsPlaying(next);
+    if (next) plugin.play();
+    else plugin.stop();
   };
+  useEffect(() => {
+    if (!heroApi) return;
+    const plugin = heroAutoplay.current;
+    const keepPaused = () => {
+      if (!isPlayingRef.current) plugin.stop();
+    };
+    heroApi.on("pointerUp", keepPaused);
+    heroApi.on("select", keepPaused);
+    heroApi.on("settle", keepPaused);
+    return () => {
+      heroApi.off("pointerUp", keepPaused);
+      heroApi.off("select", keepPaused);
+      heroApi.off("settle", keepPaused);
+    };
+  }, [heroApi]);
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
