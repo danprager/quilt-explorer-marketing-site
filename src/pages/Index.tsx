@@ -36,6 +36,17 @@ const patternSlides = [
 
 const Index = () => {
   const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const [isPlaying, setIsPlaying] = useState(true);
+  const toggleAutoplay = () => {
+    const plugin = heroAutoplay.current;
+    if (isPlaying) {
+      plugin.stop();
+      setIsPlaying(false);
+    } else {
+      plugin.play();
+      setIsPlaying(true);
+    }
+  };
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
