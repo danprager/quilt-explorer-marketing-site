@@ -11,8 +11,9 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Pause, Play } from "lucide-react";
+import type { CarouselApi } from "@/components/ui/carousel";
 import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.webp";
 import patternStats from "@/assets/qe-pattern-2-stats.webp";
 import patternYardage from "@/assets/qe-pattern-3-yardage.webp";
@@ -36,17 +37,32 @@ const patternSlides = [
 
 const Index = () => {
   const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const [heroApi, setHeroApi] = useState<CarouselApi>();
   const [isPlaying, setIsPlaying] = useState(true);
+  const isPlayingRef = useRef(true);
   const toggleAutoplay = () => {
     const plugin = heroAutoplay.current;
-    if (isPlaying) {
-      plugin.stop();
-      setIsPlaying(false);
-    } else {
-      plugin.play();
-      setIsPlaying(true);
-    }
+    const next = !isPlayingRef.current;
+    isPlayingRef.current = next;
+    setIsPlaying(next);
+    if (next) plugin.play();
+    else plugin.stop();
   };
+  useEffect(() => {
+    if (!heroApi) return;
+    const plugin = heroAutoplay.current;
+    const keepPaused = () => {
+      if (!isPlayingRef.current) plugin.stop();
+    };
+    heroApi.on("pointerUp", keepPaused);
+    heroApi.on("select", keepPaused);
+    heroApi.on("settle", keepPaused);
+    return () => {
+      heroApi.off("pointerUp", keepPaused);
+      heroApi.off("select", keepPaused);
+      heroApi.off("settle", keepPaused);
+    };
+  }, [heroApi]);
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -74,6 +90,7 @@ const Index = () => {
               <Carousel
                 opts={{ loop: true }}
                 plugins={[heroAutoplay.current]}
+                setApi={setHeroApi}
                 className="w-full max-w-2xl mx-auto"
               >
                 <CarouselContent>
