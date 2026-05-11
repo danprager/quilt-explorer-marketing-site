@@ -93,6 +93,18 @@ const Index = () => {
                 <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
                 <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
               </Carousel>
+              <div className="mt-4 flex justify-center">
+                <button
+                  type="button"
+                  onClick={toggleAutoplay}
+                  aria-label={isPlaying ? "Pause carousel" : "Play carousel"}
+                  aria-pressed={!isPlaying}
+                  className="inline-flex items-center gap-2 rounded-full bg-kona-pomegranate text-kona-white px-4 py-2 text-sm font-bold shadow-soft hover:bg-kona-pomegranate/90 transition-all"
+                >
+                  {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+                  {isPlaying ? "Pause" : "Play"}
+                </button>
+              </div>
             </div>
 
             <div className="mt-10">
