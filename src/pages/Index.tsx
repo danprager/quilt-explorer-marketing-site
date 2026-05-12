@@ -36,7 +36,7 @@ const patternSlides = [
 ];
 
 const Index = () => {
-  const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: false }));
   const [heroApi, setHeroApi] = useState<CarouselApi>();
   const [isPlaying, setIsPlaying] = useState(true);
   const isPlayingRef = useRef(true);
