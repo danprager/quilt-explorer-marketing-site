@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
-import logo from "@/assets/qe-logo.webp";
+import logo from "@/assets/qe-logo-2x.webp";
 import { Instagram, Facebook, Users, Sparkles, Scissors, Image as ImageIcon, BookOpen } from "lucide-react";
 import {
   Carousel,
@@ -36,7 +36,7 @@ const patternSlides = [
 ];
 
 const Index = () => {
-  const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: true }));
+  const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: false }));
   const [heroApi, setHeroApi] = useState<CarouselApi>();
   const [isPlaying, setIsPlaying] = useState(true);
   const isPlayingRef = useRef(true);
@@ -126,7 +126,7 @@ const Index = () => {
 
             <div className="mt-10">
               <a href="https://app.quiltexplorer.com">
-                <QEButton size="lg" className="animate-wiggle">
+                <QEButton size="lg">
                   <Sparkles className="mr-2 h-5 w-5" />
                   Start exploring!
                 </QEButton>
@@ -291,7 +291,7 @@ const Index = () => {
                 className="group inline-flex items-center gap-2 bg-kona-capri-soft rounded-full px-4 py-2 border-2 border-kona-capri-deep hover:shadow-pop transition-all hover:-translate-y-0.5"
               >
                 <Users className="h-4 w-4 text-kona-capri-deep" />
-                <span className="text-sm font-bold text-kona-capri-deep">Community Group</span>
+                <span className="text-sm font-bold text-kona-capri-deep">Facebook Group</span>
               </a>
             </div>
 
