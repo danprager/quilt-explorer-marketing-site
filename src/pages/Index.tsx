@@ -291,7 +291,7 @@ const Index = () => {
                 className="group inline-flex items-center gap-2 bg-kona-capri-soft rounded-full px-4 py-2 border-2 border-kona-capri-deep hover:shadow-pop transition-all hover:-translate-y-0.5"
               >
                 <Users className="h-4 w-4 text-kona-capri-deep" />
-                <span className="text-sm font-bold text-kona-capri-deep">Community Group</span>
+                <span className="text-sm font-bold text-kona-capri-deep">Facebook Group</span>
               </a>
             </div>
 
