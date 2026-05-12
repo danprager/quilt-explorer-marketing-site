@@ -126,7 +126,7 @@ const Index = () => {
 
             <div className="mt-10">
               <a href="https://app.quiltexplorer.com">
-                <QEButton size="lg" className="animate-wiggle">
+                <QEButton size="lg">
                   <Sparkles className="mr-2 h-5 w-5" />
                   Start exploring!
                 </QEButton>
