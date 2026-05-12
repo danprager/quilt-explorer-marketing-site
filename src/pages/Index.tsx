@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet-async";
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
-import logo from "@/assets/qe-logo.webp";
+import logo from "@/assets/qe-logo-2x.webp";
 import { Instagram, Facebook, Users, Sparkles, Scissors, Image as ImageIcon, BookOpen } from "lucide-react";
 import {
   Carousel,
