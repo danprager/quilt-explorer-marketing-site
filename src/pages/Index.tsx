@@ -120,7 +120,7 @@ const Index = () => {
                 </div>
                 <div className="mt-8">
                   <a href="https://app.quiltexplorer.com">
-                    <QEButton size="lg" className="animate-wiggle">
+                    <QEButton size="lg">
                       <Sparkles className="mr-2 h-5 w-5" />
                       Start exploring!
                     </QEButton>
@@ -139,7 +139,7 @@ const Index = () => {
                   Every click generates a beautiful new design.
                 </p>
                 <p className="text-lg md:text-xl text-charcoal/80">
-                  Browse the possibilities, find one you love, and tweak it until it's unmistakably yours.
+                  Explore the possibilities, find one you love, and tweak it until it's unmistakably yours.
                 </p>
                 <p className="text-lg md:text-xl text-charcoal/80">
                   Free to design and fun to share — on your phone, tablet, or computer.
