@@ -136,10 +136,16 @@ const Index = () => {
                   for quilt design
                 </p>
                 <p className="text-lg md:text-xl text-charcoal/80">
-                  Each button click is like a turn of the kaleidoscope, offering a beautiful new design each time.
+                  Every click generates a beautiful new design.
                 </p>
                 <p className="text-lg md:text-xl text-charcoal/80">
-                  Quilt Explorer makes it easy to create a unique fabulous design in minutes, and access an easy-to-follow pattern with complete yardages, cutting and sewing instructions.
+                  Browse the possibilities, find one you love, and tweak it until it's unmistakably yours.
+                </p>
+                <p className="text-lg md:text-xl text-charcoal/80">
+                  Free to design and fun to share — on your phone, tablet, or computer.
+                </p>
+                <p className="text-lg md:text-xl text-charcoal/80">
+                  Only pay for PDF patterns and Premium features.
                 </p>
                 <blockquote className="text-xl italic text-kona-pomegranate pt-2">
                   "Wow! Even I can do this"

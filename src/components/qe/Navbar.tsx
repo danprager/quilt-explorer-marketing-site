@@ -1,6 +1,6 @@
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useState } from "react";
-import logo from "@/assets/qe-logo.webp";
+import logo from "@/assets/qe-logo.png";
 
 type NavLink = {
   label: string;
@@ -40,7 +40,7 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 bg-kona-chartreuse shadow-soft">
       <nav className="container flex items-center justify-between py-3">
         <a href="/" className="flex items-center gap-3">
-          <img src={logo} alt="Quilt Explorer logo" className="h-10 w-auto rounded" />
+          <img src={logo} alt="Quilt Explorer logo" className="h-10 w-auto" />
         </a>
         <ul className="hidden md:flex items-center gap-1">
           {links.map((l) =>
