@@ -11,6 +11,7 @@ import AboutTeam from "./pages/AboutTeam.tsx";
 import Contact from "./pages/Contact.tsx";
 import HSTsTutorial from "./pages/tutorials/HSTsTutorial.tsx";
 import QSTsTutorial from "./pages/tutorials/QSTsTutorial.tsx";
+import FullTutorial from "./pages/tutorials/FullTutorial.tsx";
 import FAQ from "./pages/FAQ.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -32,6 +33,7 @@ const App = () => (
           <Route path="/about/team" element={<AboutTeam />} />
           <Route path="/tutorials/hsts" element={<HSTsTutorial />} />
           <Route path="/tutorials/qsts" element={<QSTsTutorial />} />
+          <Route path="/tutorials/full" element={<FullTutorial />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

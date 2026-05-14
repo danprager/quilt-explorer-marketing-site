@@ -34,7 +34,7 @@ const patternSlides = [
   { src: patternAssembly, caption: "Assembling the quilt top" },
 ];
 
-const YT_ID = "qY0rw3gkEUo";
+const YT_ID = "YTquzRGIwso";
 
 const YouTubeFacade = () => {
   const [active, setActive] = useState(false);
@@ -56,7 +56,7 @@ const YouTubeFacade = () => {
       aria-label="Play Quilt Explorer demo video"
     >
       <img
-        src={`https://img.youtube.com/vi/${YT_ID}/maxresdefault.jpg`}
+        src={`https://img.youtube.com/vi/${YT_ID}/hqdefault.jpg`}
         alt="Quilt Explorer demo video thumbnail"
         className="w-full h-full object-cover"
         loading="lazy"
@@ -123,7 +123,7 @@ const Index = () => {
                   <a href="https://app.quiltexplorer.com">
                     <QEButton size="lg">
                       <Sparkles className="mr-2 h-5 w-5" />
-                      Start exploring!
+                      Start designing!
                     </QEButton>
                   </a>
                 </div>
@@ -189,7 +189,7 @@ const Index = () => {
                   <a href="https://app.quiltexplorer.com">
                     <QEButton size="md">
                       <Sparkles className="mr-2 h-4 w-4" />
-                      Click here
+                      Start designing!
                     </QEButton>
                   </a>
                 </div>
@@ -206,6 +206,29 @@ const Index = () => {
             <h2 className="text-4xl md:text-6xl font-extrabold text-center text-kona-pomegranate">
               What can you do with QE?
             </h2>
+
+            <a
+              href="/tutorials/full"
+              className="mt-8 max-w-[360px] mx-auto flex items-center gap-4 bg-white rounded-2xl shadow-pop border border-border px-4 py-3 hover:shadow-lg hover:-translate-y-0.5 transition-all group"
+            >
+              <div className="relative shrink-0 w-24 h-16 rounded-lg overflow-hidden bg-charcoal">
+                <img
+                  src="https://img.youtube.com/vi/I8pYWNwpSYQ/hqdefault.jpg"
+                  alt="Full tutorial thumbnail"
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                />
+                <span className="absolute inset-0 flex items-center justify-center">
+                  <span className="w-8 h-8 rounded-full bg-kona-pomegranate/90 flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white ml-0.5" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+                  </span>
+                </span>
+              </div>
+              <div>
+                <p className="font-extrabold text-kona-pomegranate group-hover:underline">Watch the full video tutorial</p>
+              </div>
+            </a>
+
             <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">
 
               {/* Phone screenshot */}
@@ -269,6 +292,7 @@ const Index = () => {
               </div>
 
             </div>
+
           </div>
         </div>
       </section>
@@ -383,7 +407,7 @@ const Index = () => {
               <a href="https://app.quiltexplorer.com">
                 <QEButton size="lg">
                   <Sparkles className="mr-2 h-5 w-5" />
-                  Start designing now
+                  Start designing!
                 </QEButton>
               </a>
             </div>
