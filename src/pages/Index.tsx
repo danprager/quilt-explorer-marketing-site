@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useState } from "react";
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
 import logo from "@/assets/qe-logo-2x.webp";
@@ -34,6 +35,44 @@ const patternSlides = [
   { src: patternBlocks, caption: "Block construction" },
   { src: patternAssembly, caption: "Assembling the quilt top" },
 ];
+
+const YT_ID = "qY0rw3gkEUo";
+
+const YouTubeFacade = () => {
+  const [active, setActive] = useState(false);
+  if (active) {
+    return (
+      <iframe
+        className="w-full h-full"
+        src={`https://www.youtube.com/embed/${YT_ID}?autoplay=1`}
+        title="Quilt Explorer demo video"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowFullScreen
+      />
+    );
+  }
+  return (
+    <button
+      onClick={() => setActive(true)}
+      className="relative w-full h-full group"
+      aria-label="Play Quilt Explorer demo video"
+    >
+      <img
+        src={`https://img.youtube.com/vi/${YT_ID}/maxresdefault.jpg`}
+        alt="Quilt Explorer demo video thumbnail"
+        className="w-full h-full object-cover"
+        loading="lazy"
+      />
+      <span className="absolute inset-0 flex items-center justify-center">
+        <span className="w-16 h-16 rounded-full bg-kona-pomegranate/90 flex items-center justify-center shadow-pop group-hover:scale-110 transition-transform">
+          <svg viewBox="0 0 24 24" className="w-7 h-7 fill-white ml-1" aria-hidden="true">
+            <path d="M8 5v14l11-7z" />
+          </svg>
+        </span>
+      </span>
+    </button>
+  );
+};
 
 const Index = () => {
   const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: false }));
@@ -173,13 +212,7 @@ const Index = () => {
               </div>
               <div>
                 <div className="rounded-2xl overflow-hidden shadow-pop bg-charcoal aspect-video">
-                  <iframe
-                    className="w-full h-full"
-                    src="https://www.youtube.com/embed/qY0rw3gkEUo"
-                    title="Quilt Explorer demo video"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    allowFullScreen
-                  />
+                  <YouTubeFacade />
                 </div>
                 <div className="mt-6 text-center">
                   <a href="https://app.quiltexplorer.com">
