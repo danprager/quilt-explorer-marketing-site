@@ -210,7 +210,7 @@ const Index = () => {
 
               {/* Phone screenshot */}
               <div className="flex justify-center">
-                <div className="border-[6px] border-charcoal rounded-[2.5rem] shadow-2xl overflow-hidden max-w-[340px] w-full">
+                <div className="border-[6px] border-charcoal rounded-[2.5rem] shadow-2xl overflow-hidden max-w-[340px] w-full p-1.5" style={{backgroundColor: '#f4bad4'}}>
                   <img
                     src={appPhone}
                     alt="Quilt Explorer app design screen"
