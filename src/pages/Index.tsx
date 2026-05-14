@@ -253,7 +253,9 @@ const Index = () => {
                       "Save your designs",
                       "Scrappy quilts",
                       "Two-block checkerboard quilts",
-                      "Quarter-Square Triangles (QSTs)",
+                      "Larger block sizes",
+                      "More block styles",
+                      "Quarter-Square Triangle (QST) units",
                     ].map((f) => (
                       <li key={f} className="flex items-start gap-2">
                         <span className="mt-1 shrink-0 w-5 h-5 rounded-full bg-kona-capri-soft border border-kona-capri-deep flex items-center justify-center text-kona-capri-deep font-bold text-xs">🔒</span>
