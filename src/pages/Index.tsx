@@ -12,6 +12,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import appPhone from "@/assets/qe-app-phone.png";
 import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.webp";
 import patternStats from "@/assets/qe-pattern-2-stats.webp";
 import patternYardage from "@/assets/qe-pattern-3-yardage.webp";
@@ -197,8 +198,80 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Section 3 - Patterns (soft pink) */}
+      {/* Section 3 - Features (soft pink) */}
       <section className="bg-section-pink">
+        <div className="container py-16 md:py-24">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-6xl font-extrabold text-center text-kona-pomegranate">
+              What can you do with QE?
+            </h2>
+            <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">
+
+              {/* Phone screenshot */}
+              <div className="flex justify-center">
+                <div className="border-[6px] border-charcoal rounded-[2.5rem] shadow-2xl overflow-hidden max-w-[340px] w-full">
+                  <img
+                    src={appPhone}
+                    alt="Quilt Explorer app design screen"
+                    className="w-full h-auto block"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              {/* Feature lists */}
+              <div className="space-y-8">
+                <div>
+                  <h3 className="text-2xl font-extrabold text-kona-pomegranate mb-3">Free, forever</h3>
+                  <ul className="space-y-2 text-lg text-charcoal/85">
+                    {[
+                      "Endless random block designs",
+                      "Repeated blocks & checkerboard quilts",
+                      "Half-Square Triangle (HST) & Square units",
+                      "Choice of Kona color palettes",
+                      "Fine control of colors",
+                      "Share your designs with others",
+                      "Purchase precise PDF patterns (see next section)",
+                    ].map((f) => (
+                      <li key={f} className="flex items-start gap-2">
+                        <span className="mt-1 shrink-0 w-5 h-5 rounded-full bg-kona-chartreuse flex items-center justify-center text-charcoal font-bold text-xs">✓</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-2xl font-extrabold text-kona-capri-deep mb-1 flex items-center gap-2">
+                    Premium
+                    <span className="text-sm font-bold bg-kona-capri-deep text-white rounded-full px-3 py-0.5">Coming soon</span>
+                  </h3>
+                  <p className="text-sm text-charcoal/60 mb-3 italic">Good things are on their way — watch this space.</p>
+                  <ul className="space-y-2 text-lg text-charcoal/50">
+                    {[
+                      "Customise your color palettes",
+                      "Save your designs",
+                      "Scrappy quilts",
+                      "Two-block checkerboard quilts",
+                      "Quarter-Square Triangles (QSTs)",
+                    ].map((f) => (
+                      <li key={f} className="flex items-start gap-2">
+                        <span className="mt-1 shrink-0 w-5 h-5 rounded-full bg-kona-capri-soft border border-kona-capri-deep flex items-center justify-center text-kona-capri-deep font-bold text-xs">🔒</span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-3 text-charcoal/40 italic">…and more</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Section 4 - Patterns (soft grey) */}
+      <section className="bg-section-grey">
         <div className="container py-16 md:py-24">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-extrabold text-center text-kona-pomegranate">
@@ -257,8 +330,8 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Section 4 - Community (soft grey) */}
-      <section id="contact" className="bg-section-grey">
+      {/* Section 5 - Community (soft pink) */}
+      <section id="contact" className="bg-section-pink">
         <div className="container py-16 md:py-24">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl md:text-6xl font-extrabold text-kona-pomegranate">
