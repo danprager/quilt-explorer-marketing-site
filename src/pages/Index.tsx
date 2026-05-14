@@ -66,14 +66,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
-        <title>Quilt Explorer — Easy! Fun! Gorgeous Quilt Designs</title>
+        <title>Quilt Explorer: Your magic kaleidoscope for quilt design</title>
         <meta name="description" content="Design beautiful, unique quilt blocks in minutes. Explore endless possibilities and get a complete PDF pattern with cutting and assembly instructions." />
       </Helmet>
       <Navbar />
 
       {/* Section 1 - Hero (soft pink) */}
       <section className="bg-section-pink">
-        <div className="container py-16 md:py-24">
+        <div className="container pt-8 md:pt-12 pb-16 md:pb-24">
           <div className="max-w-4xl mx-auto text-center">
             <img
               src={logo}
@@ -139,6 +139,7 @@ const Index = () => {
             <p className="mt-3 text-lg md:text-xl text-charcoal/80">
               Quilt Explorer makes it easy to create a unique fabulous design in minutes, and access an easy-to-follow pattern with complete yardages, cutting and sewing instructions.
             </p>
+
 
             <blockquote className="mt-8 text-xl italic text-kona-pomegranate">
               "Wow! Even I can do this"
