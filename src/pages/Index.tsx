@@ -1,8 +1,8 @@
 import { Helmet } from "react-helmet-async";
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
-import logo from "@/assets/qe-logo-2x.webp";
+import logo from "@/assets/qe-logo.png";
 import { Instagram, Facebook, Users, Sparkles, Scissors, Image as ImageIcon, BookOpen } from "lucide-react";
 import {
   Carousel,
@@ -12,8 +12,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { Pause, Play } from "lucide-react";
-import type { CarouselApi } from "@/components/ui/carousel";
 import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.webp";
 import patternStats from "@/assets/qe-pattern-2-stats.webp";
 import patternYardage from "@/assets/qe-pattern-3-yardage.webp";
@@ -74,33 +72,7 @@ const YouTubeFacade = () => {
 };
 
 const Index = () => {
-  const heroAutoplay = useRef(Autoplay({ delay: 2500, stopOnInteraction: false, stopOnMouseEnter: false }));
-  const [heroApi, setHeroApi] = useState<CarouselApi>();
-  const [isPlaying, setIsPlaying] = useState(true);
-  const isPlayingRef = useRef(true);
-  const toggleAutoplay = () => {
-    const plugin = heroAutoplay.current;
-    const next = !isPlayingRef.current;
-    isPlayingRef.current = next;
-    setIsPlaying(next);
-    if (next) plugin.play();
-    else plugin.stop();
-  };
-  useEffect(() => {
-    if (!heroApi) return;
-    const plugin = heroAutoplay.current;
-    const keepPaused = () => {
-      if (!isPlayingRef.current) plugin.stop();
-    };
-    heroApi.on("pointerUp", keepPaused);
-    heroApi.on("select", keepPaused);
-    heroApi.on("settle", keepPaused);
-    return () => {
-      heroApi.off("pointerUp", keepPaused);
-      heroApi.off("select", keepPaused);
-      heroApi.off("settle", keepPaused);
-    };
-  }, [heroApi]);
+  const heroAutoplay = useRef(Autoplay({ delay: 4000, stopOnInteraction: false, stopOnMouseEnter: false }));
   return (
     <div className="min-h-screen bg-background">
       <Helmet>
@@ -128,17 +100,16 @@ const Index = () => {
               <Carousel
                 opts={{ loop: true }}
                 plugins={[heroAutoplay.current]}
-                setApi={setHeroApi}
-                className="w-full max-w-2xl mx-auto"
+                className="w-full max-w-xs mx-auto"
               >
                 <CarouselContent>
                   {heroSlides.map((src, i) => (
                     <CarouselItem key={i}>
-                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2">
+                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2 aspect-square">
                         <img
                           src={src}
                           alt={`Quilt design ${i + 1}`}
-                          className="w-full h-auto rounded-lg"
+                          className="w-full h-full object-contain rounded-lg"
                           loading={i === 0 ? "eager" : "lazy"}
                         />
                       </figure>
@@ -148,18 +119,6 @@ const Index = () => {
                 <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
                 <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
               </Carousel>
-              <div className="mt-4 flex justify-center">
-                <button
-                  type="button"
-                  onClick={toggleAutoplay}
-                  aria-label={isPlaying ? "Pause carousel" : "Play carousel"}
-                  aria-pressed={!isPlaying}
-                  className="inline-flex items-center gap-2 rounded-full bg-kona-pomegranate text-kona-white px-4 py-2 text-sm font-bold shadow-soft hover:bg-kona-pomegranate/90 transition-all"
-                >
-                  {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-                  {isPlaying ? "Pause" : "Play"}
-                </button>
-              </div>
             </div>
 
             <div className="mt-10">
