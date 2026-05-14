@@ -171,12 +171,13 @@ const Index = () => {
             <div className="grid md:grid-cols-2 gap-10 mt-10 items-center">
               <div className="space-y-5 text-lg text-charcoal/85">
                 <p>
-                  If you can't face the thought of learning complicated new software for designing your quilts,
-                  <span className="font-semibold text-kona-pomegranate"> Quilt Explorer is for you!</span>
+                  No steep learning curve. Just jump in and play.
                 </p>
                 <p>
-                  The simplicity of the design process and the immediate visual feedback makes Quilt Explorer
-                  a delight to use.
+                  Instant visual feedback makes every click a delight.
+                </p>
+                <p>
+                  Our tutorials are there whenever you need them, for inspiration or a helping hand.
                 </p>
                 <p className="text-2xl font-bold text-kona-orange">So easy! Such fun!</p>
               </div>
@@ -231,7 +232,7 @@ const Index = () => {
                       "Choice of Kona color palettes",
                       "Fine control of colors",
                       "Share your designs with others",
-                      "Purchase precise PDF patterns (see next section)",
+                      "Order precise PDF patterns (see next section)",
                     ].map((f) => (
                       <li key={f} className="flex items-start gap-2">
                         <span className="mt-1 shrink-0 w-5 h-5 rounded-full bg-kona-chartreuse flex items-center justify-center text-charcoal font-bold text-xs">✓</span>
@@ -249,12 +250,12 @@ const Index = () => {
                   <p className="text-sm text-charcoal/60 mb-3 italic">Good things are on their way — watch this space.</p>
                   <ul className="space-y-2 text-lg text-charcoal/50">
                     {[
-                      "Customise your color palettes",
+                      "Customise and save your color palettes",
                       "Save your designs",
                       "Scrappy quilts",
                       "Two-block checkerboard quilts",
-                      "Larger block sizes",
-                      "More block styles",
+                      "Larger block sizes: up to 11×11 units",
+                      "Additional block styles, e.g. Rotation",
                       "Quarter-Square Triangle (QST) units",
                     ].map((f) => (
                       <li key={f} className="flex items-start gap-2">
