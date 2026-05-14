@@ -88,62 +88,67 @@ const Index = () => {
             <img
               src={logo}
               alt="Quilt Explorer logo"
-              className="mx-auto w-full max-w-2xl h-auto"
+              className="mx-auto w-full max-w-[400px] h-auto"
             />
-            <p className="mt-6 text-3xl md:text-5xl font-extrabold text-kona-pomegranate-deep">
-              Your magic kaleidoscope
-              <br />
-              for quilt design
-            </p>
 
-            <div className="mt-10 px-10 md:px-12">
-              <Carousel
-                opts={{ loop: true }}
-                plugins={[heroAutoplay.current]}
-                className="w-full max-w-xs mx-auto"
-              >
-                <CarouselContent>
-                  {heroSlides.map((src, i) => (
-                    <CarouselItem key={i}>
-                      <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2 aspect-square">
-                        <img
-                          src={src}
-                          alt={`Quilt design ${i + 1}`}
-                          className="w-full h-full object-contain rounded-lg"
-                          loading={i === 0 ? "eager" : "lazy"}
-                        />
-                      </figure>
-                    </CarouselItem>
-                  ))}
-                </CarouselContent>
-                <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
-                <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
-              </Carousel>
+            <div className="mt-10 md:grid md:grid-cols-2 md:gap-10 md:items-start">
+              {/* Left: carousel + CTA */}
+              <div>
+                <div className="px-10 md:px-8">
+                  <Carousel
+                    opts={{ loop: true }}
+                    plugins={[heroAutoplay.current]}
+                    className="w-full max-w-xs mx-auto"
+                  >
+                    <CarouselContent>
+                      {heroSlides.map((src, i) => (
+                        <CarouselItem key={i}>
+                          <figure className="rounded-2xl overflow-hidden shadow-pop bg-white p-2 aspect-square">
+                            <img
+                              src={src}
+                              alt={`Quilt design ${i + 1}`}
+                              className="w-full h-full object-contain rounded-lg"
+                              loading={i === 0 ? "eager" : "lazy"}
+                            />
+                          </figure>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
+                    <CarouselNext className="bg-kona-pomegranate text-kona-white border-none hover:bg-kona-pomegranate/90 hover:text-kona-white" />
+                  </Carousel>
+                </div>
+                <div className="mt-8">
+                  <a href="https://app.quiltexplorer.com">
+                    <QEButton size="lg" className="animate-wiggle">
+                      <Sparkles className="mr-2 h-5 w-5" />
+                      Start exploring!
+                    </QEButton>
+                  </a>
+                </div>
+              </div>
+
+              {/* Right: tagline + text */}
+              <div className="mt-10 md:-mt-1.5 md:text-left space-y-4">
+                <p className="text-3xl md:text-4xl font-extrabold text-kona-pomegranate-deep">
+                  Your magic kaleidoscope
+                  <br />
+                  for quilt design
+                </p>
+                <p className="text-lg md:text-xl text-charcoal/80">
+                  Each button click is like a turn of the kaleidoscope, offering a beautiful new design each time.
+                </p>
+                <p className="text-lg md:text-xl text-charcoal/80">
+                  Quilt Explorer makes it easy to create a unique fabulous design in minutes, and access an easy-to-follow pattern with complete yardages, cutting and sewing instructions.
+                </p>
+                <blockquote className="text-xl italic text-kona-pomegranate pt-2">
+                  "Wow! Even I can do this"
+                  <footer className="not-italic text-base text-charcoal/70 mt-1">
+                    — Maryjane Morris, Brisbane, Australia
+                  </footer>
+                </blockquote>
+              </div>
             </div>
-
-            <div className="mt-10">
-              <a href="https://app.quiltexplorer.com">
-                <QEButton size="lg">
-                  <Sparkles className="mr-2 h-5 w-5" />
-                  Start exploring!
-                </QEButton>
-              </a>
-            </div>
-
-            <p className="mt-10 text-lg md:text-xl text-charcoal/80">
-              Each button click is like a turn of the kaleidoscope, offering a beautiful new design each time.
-            </p>
-            <p className="mt-3 text-lg md:text-xl text-charcoal/80">
-              Quilt Explorer makes it easy to create a unique fabulous design in minutes, and access an easy-to-follow pattern with complete yardages, cutting and sewing instructions.
-            </p>
-
-
-            <blockquote className="mt-8 text-xl italic text-kona-pomegranate">
-              "Wow! Even I can do this"
-              <footer className="not-italic text-base text-charcoal/70 mt-1">
-                — Maryjane Morris, Brisbane, Australia
-              </footer>
-            </blockquote>
 
           </div>
         </div>
