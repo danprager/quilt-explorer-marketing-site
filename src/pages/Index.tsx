@@ -1,5 +1,5 @@
 import { Helmet } from "react-helmet-async";
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import Navbar from "@/components/qe/Navbar";
 import QEButton from "@/components/qe/QEButton";
 import logo from "@/assets/qe-logo-2x.webp";
@@ -12,7 +12,6 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { useRef, useState, useEffect } from "react";
 import { Pause, Play } from "lucide-react";
 import type { CarouselApi } from "@/components/ui/carousel";
 import patternQuiltTop from "@/assets/qe-pattern-1-quilt-top.webp";
