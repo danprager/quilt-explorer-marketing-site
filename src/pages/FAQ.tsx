@@ -83,10 +83,11 @@ const FAQ = () => {
                     <h3 className="text-lg font-bold text-charcoal mb-1">Can I use Quilt Explorer on any device?</h3>
                     <p>Yes! Quilt Explorer is fully functional on any device that is connected to the internet.</p>
                     <div className="mt-3 space-y-2">
-                      <p><strong>Landscape mode</strong> — mainly desktop and laptop computers</p>
-                      <ul className="list-disc pl-6"><li>All features can be seen in a single screen</li></ul>
-                      <p><strong>Portrait mode</strong> — mainly tablets and smart phones</p>
-                      <ul className="list-disc pl-6"><li>Users will need to toggle between 'block' view and 'quilt' view to see all the features</li></ul>
+                      <p><strong>Landscape mode</strong> — tablets, desktops, and laptops</p>
+                      <ul className="list-disc pl-6"><li>All design features visible in a single screen</li></ul>
+                      <p><strong>Portrait mode</strong> — phones</p>
+                      <ul className="list-disc pl-6"><li>On the main design page, toggle between 'block' view and 'quilt' view to see all the features</li>
+                      <li>Other pages may require scrolling</li></ul>
                     </div>
                   </div>
                   <div>
