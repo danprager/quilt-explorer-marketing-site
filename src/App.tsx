@@ -15,6 +15,7 @@ import FullTutorial from "./pages/tutorials/FullTutorial.tsx";
 import FAQ from "./pages/FAQ.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
+import { PosthogPageview } from "./components/PosthogPageview.tsx";
 
 const queryClient = new QueryClient();
 
@@ -25,6 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <PosthogPageview />
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
