@@ -18,6 +18,7 @@ const links: NavLink[] = [
       { label: "Full Video Tutorial", href: "/tutorials/full" },
       { label: "Half-Square Triangles (HSTs)", href: "/tutorials/hsts" },
       { label: "Quarter-Square Triangles (QSTs)", href: "/tutorials/qsts" },
+      { label: "Half-Rectangle Triangles (HRTs)", href: "/tutorials/hrts" },
     ],
   },
   {
