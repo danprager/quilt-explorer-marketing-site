@@ -7,11 +7,27 @@ const TALL = "h-28 w-14 object-contain";
 const ARROW = "w-8 h-auto object-contain";
 const STEP = "w-44 h-auto object-contain shrink-0";
 
+// Twisted-rectangle diagrams: [image width, fabric rectangle short side] in source pixels.
+// Sizing by the rectangle rather than the image keeps pieces the same size across diagrams.
+const PIECES: Record<string, [number, number]> = {
+  "image13.png": [616, 255],
+  "image14.png": [552, 244],
+  "image15.png": [880, 386],
+  "image19.png": [617, 254],
+};
+const pieceWidth = (img: string, shortSide: number) => {
+  const [width, short] = PIECES[img];
+  return Math.round((width * shortSide) / short);
+};
+// Short side of the marked rectangle, matching TALL's w-14.
+const SLOPE_PIECE = 56;
+const STEP_PIECE = 64;
+
 const SlopeSequence = ({ marked, placed, result, slope }: { marked: string; placed: string; result: string; slope: string }) => (
   <div className="mt-6 flex flex-wrap items-center gap-3">
     <img src={`${IMG}${marked}`} alt={`Rectangle marked with a diagonal for ${slope} sloping HRTs`} className={TALL} loading="lazy" />
     <img src={`${IMG}image21.png`} alt="" className={ARROW} loading="lazy" />
-    <img src={`${IMG}${placed}`} alt={`Rectangles placed for ${slope} sloping HRTs`} className="h-32 w-auto object-contain" loading="lazy" />
+    <img src={`${IMG}${placed}`} alt={`Rectangles placed for ${slope} sloping HRTs`} className="h-auto max-w-full" style={{ width: pieceWidth(placed, SLOPE_PIECE) }} loading="lazy" />
     <img src={`${IMG}image21.png`} alt="" className={ARROW} loading="lazy" />
     <div className="flex gap-2">
       <img src={`${IMG}${result}`} alt={`First ${slope} sloping HRT`} className={TALL} loading="lazy" />
@@ -104,7 +120,7 @@ const HRTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image13.png`} alt="Top rectangle twisted so its corners meet the drawn diagonal" className="w-40 h-auto object-contain" loading="lazy" />
+              <img src={`${IMG}image13.png`} alt="Top rectangle twisted so its corners meet the drawn diagonal" className="h-auto max-w-full" style={{ width: pieceWidth("image13.png", STEP_PIECE) }} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -112,7 +128,7 @@ const HRTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image14.png`} alt="Rectangles sewn with two lines either side of diagonal" className="w-40 h-auto object-contain" loading="lazy" />
+              <img src={`${IMG}image14.png`} alt="Rectangles sewn with two lines either side of diagonal" className="h-auto max-w-full" style={{ width: pieceWidth("image14.png", STEP_PIECE) }} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
@@ -120,7 +136,7 @@ const HRTsTutorial = () => {
             </p>
 
             <div className="mt-6">
-              <img src={`${IMG}image15.png`} alt="Unit being cut along the drawn line" className="w-40 h-auto object-contain" loading="lazy" />
+              <img src={`${IMG}image15.png`} alt="Unit being cut along the drawn line" className="h-auto max-w-full" style={{ width: pieceWidth("image15.png", STEP_PIECE) }} loading="lazy" />
             </div>
 
             <p className="mt-6 text-lg text-charcoal/85">
