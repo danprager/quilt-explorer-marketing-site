@@ -12,6 +12,7 @@ import Contact from "./pages/Contact.tsx";
 import HSTsTutorial from "./pages/tutorials/HSTsTutorial.tsx";
 import QSTsTutorial from "./pages/tutorials/QSTsTutorial.tsx";
 import HRTsTutorial from "./pages/tutorials/HRTsTutorial.tsx";
+import DotsOvalsTutorial from "./pages/tutorials/DotsOvalsTutorial.tsx";
 import FullTutorial from "./pages/tutorials/FullTutorial.tsx";
 import FAQ from "./pages/FAQ.tsx";
 import NotFound from "./pages/NotFound.tsx";
@@ -37,6 +38,7 @@ const App = () => (
           <Route path="/tutorials/hsts" element={<HSTsTutorial />} />
           <Route path="/tutorials/qsts" element={<QSTsTutorial />} />
           <Route path="/tutorials/hrts" element={<HRTsTutorial />} />
+          <Route path="/tutorials/dots-ovals" element={<DotsOvalsTutorial />} />
           <Route path="/tutorials/full" element={<FullTutorial />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />

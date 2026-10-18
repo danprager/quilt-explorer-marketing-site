@@ -7,14 +7,20 @@ more than once in the PDF, or whose pixels match an image already in one of the
 --existing directories, are not written again; the script reports which file
 to reuse instead.
 
+With --manifest, every placement (including repeats) is also recorded as JSON:
+page, bbox in points, the file it uses and that file's pixel size. The ratio of
+bbox width to pixel width is the scale the PDF author placed the image at.
+
 Usage:
     pip install pymupdf
     python3 scripts/extract_pdf_images.py TUTORIAL.pdf public/tutorials/hrt-images \
-        --existing public/tutorials/images public/tutorials/qst-images
+        --existing public/tutorials/images public/tutorials/qst-images \
+        --manifest /tmp/hrt-manifest.json
 """
 
 import argparse
 import hashlib
+import json
 import sys
 from pathlib import Path
 
@@ -63,6 +69,7 @@ def main():
     parser.add_argument("outdir", type=Path)
     parser.add_argument("--existing", type=Path, nargs="*", default=[], help="directories of images to reuse")
     parser.add_argument("--prefix", default="image", help="output file name prefix (default: image)")
+    parser.add_argument("--manifest", type=Path, help="write every placement to this JSON file")
     args = parser.parse_args()
 
     known = {}
@@ -73,6 +80,8 @@ def main():
     args.outdir.mkdir(parents=True, exist_ok=True)
     doc = pymupdf.open(args.pdf)
     seen = {}
+    sizes = {}
+    placements = []
     count = 0
     for page in doc:
         for info in page.get_image_info(xrefs=True):
@@ -80,18 +89,23 @@ def main():
             where = f"page {page.number + 1} at {tuple(round(v) for v in info['bbox'])}"
             if placement in seen:
                 print(f"{where}: same as {seen[placement]}")
-                continue
-            pix = oriented_pixmap(doc, *placement)
-            key = pixel_key(pix)
-            if key in known:
-                seen[placement] = known[key]
-                print(f"{where}: reuse existing {known[key]}")
-                continue
-            count += 1
-            path = args.outdir / f"{args.prefix}{count}.png"
-            pix.save(path)
-            seen[placement] = known[key] = path
-            print(f"{where}: wrote {path} ({pix.width}x{pix.height}, rotated {placement[1]})")
+            else:
+                pix = oriented_pixmap(doc, *placement)
+                key = pixel_key(pix)
+                if key in known:
+                    seen[placement] = known[key]
+                    print(f"{where}: reuse existing {known[key]}")
+                else:
+                    count += 1
+                    path = args.outdir / f"{args.prefix}{count}.png"
+                    pix.save(path)
+                    seen[placement] = known[key] = path
+                    print(f"{where}: wrote {path} ({pix.width}x{pix.height}, rotated {placement[1]})")
+                sizes[seen[placement]] = (pix.width, pix.height)
+            placements.append({"page": page.number + 1, "bbox": [round(v, 1) for v in info["bbox"]],
+                               "file": str(seen[placement]), "px": sizes[seen[placement]]})
+    if args.manifest:
+        args.manifest.write_text(json.dumps(placements, indent=1))
     return 0
 
 
