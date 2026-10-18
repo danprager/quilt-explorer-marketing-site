@@ -10,10 +10,10 @@ const STEP = "w-44 h-auto object-contain shrink-0";
 // Twisted-rectangle diagrams: [image width, fabric rectangle short side] in source pixels.
 // Sizing by the rectangle rather than the image keeps pieces the same size across diagrams.
 const PIECES: Record<string, [number, number]> = {
-  "image13.png": [616, 255],
-  "image14.png": [552, 244],
-  "image15.png": [880, 386],
-  "image19.png": [617, 254],
+  "image13.png": [616, 279],
+  "image14.png": [552, 250],
+  "image15.png": [880, 390],
+  "image19.png": [617, 279],
 };
 const pieceWidth = (img: string, shortSide: number) => {
   const [width, short] = PIECES[img];
