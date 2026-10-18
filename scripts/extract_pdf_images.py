@@ -52,6 +52,10 @@ def pixel_key(pix):
 
 def oriented_pixmap(doc, xref, rotation):
     pix = rgb_pixmap(pymupdf.Pixmap(doc, xref))
+    smask = doc.extract_image(xref)["smask"]
+    if smask:
+        # The image's transparency is stored separately; without it the background renders black.
+        pix = pymupdf.Pixmap(pix, pymupdf.Pixmap(doc, smask))
     if rotation == 0:
         return pix
     # Draw the image rotated onto a scratch page sized to its pixels, then render at 1:1.
@@ -60,7 +64,7 @@ def oriented_pixmap(doc, xref, rotation):
     page = scratch.new_page(width=w, height=h)
     # insert_image rotates anti-clockwise.
     page.insert_image(page.rect, pixmap=pix, rotate=(360 - rotation) % 360, keep_proportion=False)
-    return page.get_pixmap(alpha=False)
+    return page.get_pixmap(alpha=bool(smask))
 
 
 def main():

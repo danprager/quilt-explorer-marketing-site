@@ -42,6 +42,7 @@ previewing. The dev server needs Node 20+: `PATH=~/.nvm/versions/node/v20.20.2/b
 | Sequence frames sharing a frame (same size, same outline) | one shared crop, even margins around the outline | `T crop F1 F2 ... --anchor dark --out DIR` |
 | Content that sticks out of its main rectangle | even margin around everything; pad where needed | `T crop IN --margin N --out DIR` |
 | Full-bleed swatches | nothing | — |
+| Dark dots (pin heads) lost on dark fabric | white ring around each dot | `T pins IN OUT --min 28 --ring 10` |
 
 Rules of thumb:
 - Never key out white on photos of transparent objects: the object's body is nearly the backdrop
@@ -54,7 +55,8 @@ Rules of thumb:
 
 ## Scale
 
-Prefer the PDF placement scale (`T widths`). When the same piece appears inside images with
+Use the PDF placement scale (`T widths`) for intro images, but check step sequences: the PDF
+often redraws pieces at drifting sizes. Give a how-to sequence one piece scale. When the same piece appears inside images with
 different margins (e.g. a rectangle inside twisted-pair diagrams), size by the piece instead:
 `T measure IMG --color R,G,B` and use the **unoccluded** side (check `ratio` matches the piece's
 known proportions; other pieces can hide part of it). Widths = image width × target / piece size.

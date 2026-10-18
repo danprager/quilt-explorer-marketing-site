@@ -9,6 +9,7 @@
 | `transparent --outside IN OUT [--close N]` | only white connected to the border; anti-aliased line edges become soft alpha |
 | `crop FILES --out DIR [--anchor dark\|x0,y0,x1,y1] [--margin N] [--gap 5]` | even up existing margins; several files share one crop |
 | `measure IMG --color R,G,B [--tol 40]` | bbox, size, aspect ratio, widest row / tallest column of a colour |
+| `pins IN OUT [--min 22] [--ring 6] [--color #ffffff] [--max-dark 0.15]` | ring solid dark dots; `--min` = smallest dot diameter (above arrowhead size), size `--ring` for the display scale; prints skipped blobs so you can tune |
 | `widths MANIFEST RAW PROCESSED [--k 1.4]` | CSS widths from the PDF placement scale; flags images placed at several sizes or stretched |
 
 Classification: `full-bleed` = the border ring is mostly not light-neutral; `flat` = light-neutral
@@ -19,7 +20,20 @@ edges are ignored.
 ## Pitfalls seen so far
 
 - **PDFs rarely carry alpha.** Check `doc.extract_image(xref)["smask"]`; if 0, the white is baked
-  in and re-extracting won't help.
+  in and re-extracting won't help. When there is a mask, the extractor applies it (before it did,
+  masked images came out on black). Masked images can carry a soft white glow that only shows on
+  the pink page; clear it with
+  `magick IN -channel A -fx "min(min(u.r,u.g),u.b)>0.88 ? 0 : u.a" +channel -trim +repage OUT`.
+- **`--outside` on an image with alpha:** flatten onto white first (`-background white -flatten`);
+  masked-out pixels are black underneath and would count as ink.
+- **One diagram made of several placements.** A PDF may build a diagram from overlapping images
+  (Flying Geese: a large square with two small squares placed on its corners). The manifest shows
+  overlapping bboxes; composite them at a fixed px/pt with `magick ... -geometry +X+Y -composite`.
+- **Clipped placements.** A bbox outside the page (negative x) means readers only saw part of the
+  image; crop to the visible part.
+- **PDF scale drifts within step sequences** (Flying Geese, Drunkard's Path: 7–27%). Measure the
+  piece that does not change between steps and size every frame by it; derive related pieces from
+  the geometry (a half-square triangle's long edge = side × √2) or from the PDF's own ratios.
 - **Occluded measurements.** In the HRT twisted-pair diagrams the orange piece covers part of the
   green rectangle near the bottom, so a band measurement read 255px instead of 280px and those
   diagrams rendered ~9% too large. Use the bbox and check the ratio (a 1:2 piece must read 2.00).

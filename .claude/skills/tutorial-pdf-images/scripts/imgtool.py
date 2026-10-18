@@ -14,6 +14,7 @@ Run with `python3 -I` from a venv outside the image directory.
 """
 
 import argparse
+import math
 import subprocess
 import sys
 from pathlib import Path
@@ -261,6 +262,99 @@ def cmd_measure(a):
           f"widest_row={widest[0]}@y{widest[1]} tallest_col={tallest[0]}@x{tallest[1]}")
 
 
+def cmd_pins(a):
+    """Ring solid dark dots (e.g. pin heads) in a contrasting colour so they read on dark fabric.
+
+    A distance transform gives, for each dark pixel, the distance to the nearest non-dark pixel.
+    A dot's centre is where that distance peaks, and the peak is the dot's radius. Lines, arrows,
+    dashes and text never get deeper than half their stroke width, so only places deeper than
+    `min/2` count, and a dot touching an arrow still gets its own centre and radius. A circular,
+    anti-aliased ring is painted around each dot.
+    """
+    pix = pymupdf.Pixmap(a.input)
+    if not pix.alpha:
+        pix = pymupdf.Pixmap(pymupdf.csRGB, pix) if pix.n < 3 else pix
+        pix = pymupdf.Pixmap(pix, 1)
+    if pix.n != 4:
+        pix = pymupdf.Pixmap(pymupdf.csRGB, pix)
+    w, h = pix.width, pix.height
+    s = bytearray(pix.samples)
+    dark = bytearray(1 if s[i * 4 + 3] > 128 and max(s[i * 4:i * 4 + 3]) < 70 else 0 for i in range(w * h))
+    # Two-pass chamfer distance transform (steps of 1 and sqrt 2).
+    big = float(w + h)
+    dist = [big if v else 0.0 for v in dark]
+    diag = 2 ** 0.5
+    for y in range(h):
+        for x in range(w):
+            i = y * w + x
+            if dist[i]:
+                best = dist[i]
+                if x: best = min(best, dist[i - 1] + 1)
+                if y:
+                    best = min(best, dist[i - w] + 1)
+                    if x: best = min(best, dist[i - w - 1] + diag)
+                    if x < w - 1: best = min(best, dist[i - w + 1] + diag)
+                dist[i] = best
+    for y in range(h - 1, -1, -1):
+        for x in range(w - 1, -1, -1):
+            i = y * w + x
+            if dist[i]:
+                best = dist[i]
+                if x < w - 1: best = min(best, dist[i + 1] + 1)
+                if y < h - 1:
+                    best = min(best, dist[i + w] + 1)
+                    if x < w - 1: best = min(best, dist[i + w + 1] + diag)
+                    if x: best = min(best, dist[i + w - 1] + diag)
+                dist[i] = best
+    # Each connected region deeper than min/2 holds one dot; its deepest pixel is the centre.
+    deep = [d >= a.min / 2 for d in dist]
+    seen = bytearray(w * h)
+    dots = []
+    for start in range(w * h):
+        if not deep[start] or seen[start]:
+            continue
+        stack, peak = [start], start
+        seen[start] = 1
+        while stack:
+            i = stack.pop()
+            if dist[i] > dist[peak]:
+                peak = i
+            x = i % w
+            for j in (i - 1 if x else -1, i + 1 if x < w - 1 else -1, i - w, i + w):
+                if 0 <= j < w * h and deep[j] and not seen[j]:
+                    seen[j] = 1
+                    stack.append(j)
+        cx, cy, radius = peak % w, peak // w, dist[peak] + 0.5
+        # Round check: just outside a dot there is almost no dark; an arrowhead's corners and
+        # shaft are still dark there.
+        probe = radius + 3
+        angles = [t * math.tau / 36 for t in range(36)]
+        samples = [(round(cx + probe * math.cos(t)), round(cy + probe * math.sin(t))) for t in angles]
+        inside = [(x, y) for x, y in samples if 0 <= x < w and 0 <= y < h]
+        darkness = sum(dark[y * w + x] for x, y in inside) / max(1, len(inside))
+        if darkness <= a.max_dark:
+            dots.append((cx, cy, radius))
+        else:
+            print(f"  skipped blob at ({cx},{cy}) r={radius:.0f}: {darkness:.0%} dark around it")
+    colour = [int(a.color[i:i + 2], 16) for i in (1, 3, 5)]
+    for cx, cy, radius in dots:
+        outer = radius + a.ring
+        for y in range(max(0, int(cy - outer - 1)), min(h, int(cy + outer + 2))):
+            for x in range(max(0, int(cx - outer - 1)), min(w, int(cx + outer + 2))):
+                d = ((x - cx) ** 2 + (y - cy) ** 2) ** 0.5
+                cover = min(1.0, max(0.0, outer - d + 0.5))  # anti-aliased outer edge
+                if cover <= 0 or d < radius - 0.5:
+                    continue
+                i = (y * w + x) * 4
+                inner = min(1.0, max(0.0, d - radius + 0.5))  # blend into the dot's own edge
+                k = cover * inner
+                for c in range(3):
+                    s[i + c] = round(s[i + c] * (1 - k) + colour[c] * k)
+                s[i + 3] = max(s[i + 3], round(255 * cover))
+    pymupdf.Pixmap(pymupdf.csRGB, w, h, bytes(s), True).save(a.output)
+    print(f"{Path(a.input).name}: ringed {len(dots)} dots " + " ".join(f"r={d[2]:.0f}" for d in dots))
+
+
 def cmd_widths(a):
     """Display widths that keep the PDF's relative scale, after trimming or padding."""
     import json
@@ -316,6 +410,15 @@ def main():
     s.add_argument("--color", required=True, help="R,G,B of the piece, e.g. 189,212,56")
     s.add_argument("--tol", type=int, default=40)
     s.set_defaults(fn=cmd_measure)
+    s = sub.add_parser("pins", help="ring solid dark dots (pin heads) so they contrast with dark fabric")
+    s.add_argument("input")
+    s.add_argument("output")
+    s.add_argument("--min", type=int, default=22, help="px; dark strokes thinner than this are not dots")
+    s.add_argument("--ring", type=float, default=6, help="ring width in px")
+    s.add_argument("--color", default="#ffffff", help="ring colour (default white)")
+    s.add_argument("--max-dark", type=float, default=0.15,
+                   help="max share of dark just outside a dot (arrowheads score higher)")
+    s.set_defaults(fn=cmd_pins)
     s = sub.add_parser("widths", help="CSS widths that keep the PDF's relative scale")
     s.add_argument("manifest", help="JSON from extract_pdf_images.py --manifest")
     s.add_argument("raw", help="the directory extract_pdf_images.py wrote to")
