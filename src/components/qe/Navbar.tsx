@@ -16,10 +16,13 @@ const links: NavLink[] = [
     label: "Tutorials",
     children: [
       { label: "Full Video Tutorial", href: "/tutorials/full" },
+      // Unit tutorials in alphabetical order.
+      { label: "Dots and Ovals", href: "/tutorials/dots-ovals" },
+      { label: "Drunkard's Path", href: "/tutorials/drunkards-path" },
+      { label: "Flying Geese", href: "/tutorials/flying-geese" },
+      { label: "Half-Rectangle Triangles (HRTs)", href: "/tutorials/hrts" },
       { label: "Half-Square Triangles (HSTs)", href: "/tutorials/hsts" },
       { label: "Quarter-Square Triangles (QSTs)", href: "/tutorials/qsts" },
-      { label: "Half-Rectangle Triangles (HRTs)", href: "/tutorials/hrts" },
-      { label: "Dots and Ovals", href: "/tutorials/dots-ovals" },
     ],
   },
   {
