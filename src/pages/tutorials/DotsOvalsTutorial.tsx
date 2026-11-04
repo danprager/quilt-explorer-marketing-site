@@ -157,6 +157,23 @@ const DotsOvalsTutorial = () => {
               draw the shapes onto the back of your chosen fabrics. Draw them as closely together as
               possible to minimise fabric wastage. Cut them out with scissors.
             </p>
+            <p className="mt-4 text-lg text-charcoal/85">
+              Quilt Explorer patterns ask you to cut one piece of fabric and trace all of a
+              fabric's dots, or all of its ovals, onto it. For the least wastage, pack the shapes in
+              rows and shift every other row by half a shape, so that the rows nest together. This is
+              called hexagonal packing. Your pattern tells you how big a piece of fabric to cut.
+            </p>
+
+            <div className="mt-6 flex flex-wrap items-start gap-8">
+              <figure>
+                <Pic src="packed-dots.png" width={250} alt="Dots packed hexagonally: three rows, every other row shifted by half a dot" />
+                <figcaption className="mt-2 text-sm text-charcoal/70">Dots, packed hexagonally</figcaption>
+              </figure>
+              <figure>
+                <Pic src="packed-ovals.png" width={250} alt="Ovals packed hexagonally: three rows, every other row shifted by half an oval" />
+                <figcaption className="mt-2 text-sm text-charcoal/70">Ovals, packed hexagonally</figcaption>
+              </figure>
+            </div>
 
             <h3 className="mt-12 text-xl md:text-2xl font-bold text-kona-pomegranate">
               Assemble and sew your units
