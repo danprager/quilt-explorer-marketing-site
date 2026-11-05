@@ -154,8 +154,7 @@ const DotsOvalsTutorial = () => {
             </p>
             <p className="mt-4 text-lg text-charcoal/85">
               To cut your round and/or oval pieces, use the cardboard template you have just made to
-              draw the shapes onto the back of your chosen fabrics. Draw them as closely together as
-              possible to minimise fabric wastage. Cut them out with scissors.
+              draw the shapes onto the back of your chosen fabrics.
             </p>
             <p className="mt-4 text-lg text-charcoal/85">
               Quilt Explorer patterns ask you to cut one piece of fabric and trace all of a
@@ -174,6 +173,10 @@ const DotsOvalsTutorial = () => {
                 <figcaption className="mt-2 text-sm text-charcoal/70">Ovals, packed hexagonally</figcaption>
               </figure>
             </div>
+
+            <p className="mt-6 text-lg text-charcoal/85">
+              Cut your shapes out with scissors.
+            </p>
 
             <h3 className="mt-12 text-xl md:text-2xl font-bold text-kona-pomegranate">
               Assemble and sew your units
