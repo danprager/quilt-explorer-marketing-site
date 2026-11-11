@@ -17,6 +17,8 @@ import FlyingGeeseTutorial from "./pages/tutorials/FlyingGeeseTutorial.tsx";
 import DotsOvalsTutorial from "./pages/tutorials/DotsOvalsTutorial.tsx";
 import FullTutorial from "./pages/tutorials/FullTutorial.tsx";
 import FAQ from "./pages/FAQ.tsx";
+import Shop from "./pages/Shop.tsx";
+import ShopItemPage from "./pages/ShopItemPage.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 import { PosthogPageview } from "./components/PosthogPageview.tsx";
@@ -44,6 +46,8 @@ const App = () => (
           <Route path="/tutorials/flying-geese" element={<FlyingGeeseTutorial />} />
           <Route path="/tutorials/dots-ovals" element={<DotsOvalsTutorial />} />
           <Route path="/tutorials/full" element={<FullTutorial />} />
+          <Route path="/shop" element={<Shop />} />
+          <Route path="/shop/:slug" element={<ShopItemPage />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}

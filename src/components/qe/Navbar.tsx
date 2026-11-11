@@ -11,7 +11,7 @@ type NavLink = {
 const links: NavLink[] = [
   { label: "Home", href: "/" },
   { label: "Design", href: "https://app.quiltexplorer.com" },
-  { label: "FAQ", href: "/faq" },
+  { label: "Shop", href: "/shop" },
   {
     label: "Tutorials",
     children: [
@@ -25,6 +25,7 @@ const links: NavLink[] = [
       { label: "Quarter-Square Triangles (QSTs)", href: "/tutorials/qsts" },
     ],
   },
+  { label: "FAQ", href: "/faq" },
   {
     label: "About",
     children: [
