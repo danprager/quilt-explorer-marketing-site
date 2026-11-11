@@ -25,7 +25,7 @@ export const shopItems: ShopItem[] = [
     designer: "Andi Herman",
     collection: "Best Day Ever by Jennifer Paganelli for Windham Fabrics",
     price: "US$14.50", // every Shop pattern; Stripe's STRIPE_SHOP_PRICE_ID is the real price
-    summary: "A scrappy throw of half-rectangle triangles, appliqué dots and ovals, made for one fat quarter bundle.",
+    summary: "A scrappy design of half-rectangle triangles, appliqué dots and ovals, made for one fat quarter bundle.",
     blurb: [
       "I've been a massive fan of Jennifer Paganelli's designs for years, so I was absolutely thrilled to get a sneak preview of her gorgeous 'Best Day Ever' collection for this project. The crisp half-rectangle triangles combined with the playful appliqué dots and ovals are perfect for showing off these vibrant prints.",
       "The 'Scrappy' function in Quilt Explorer is the perfect way to showcase a fat quarter bundle of your favorite fabric line. The final page of the pattern has four more sensational scrappy designs using these fabulous fabrics.",

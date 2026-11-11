@@ -157,7 +157,7 @@ const ShopItemPage = () => {
 
           {/* Designer's note */}
           <article className="mt-16 max-w-3xl mx-auto">
-            <h2 className="text-2xl md:text-3xl font-bold text-kona-pomegranate">From the designer</h2>
+            <h2 className="text-2xl md:text-3xl font-bold text-kona-pomegranate">From the pattern designer</h2>
             {item.blurb.map((p) => (
               <p key={p.slice(0, 24)} className="mt-4 text-lg text-charcoal/85">{p}</p>
             ))}
